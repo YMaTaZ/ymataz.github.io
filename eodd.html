@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EODD · 可解释 AI 决策系统 · 案例 01</title>
+<meta name="description" content="EODD · 可解释 AI 决策系统 —— 七步 EODD 设计法 + 四角色多智能体编排 + 可审计决策轨迹。论文发表于 Design Science Journal（Cambridge）。" />
+<meta name="color-scheme" content="light" />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="assets/case.css" />
+<script>document.documentElement.classList.add('js');
+window.addEventListener('error',function(){document.documentElement.classList.remove('js');});</script>
+</head>
+<body>
+
+<header class="c-nav">
+  <div class="c-nav__inner">
+    <a class="c-brand" href="index.html"><span class="c-brand__dot" aria-hidden="true"></span>作品集</a>
+    <nav class="c-nav__links" aria-label="案例导航">
+      <span class="c-nav__cases">
+        <a href="eodd.html" aria-current="page">EODD</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="kkh.html">KKH</a>
+      </span>
+      <a href="../pixel/v2/index.html">← 返回首页</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="case-intro">
+
+  <!-- ===================== 页头 ===================== -->
+  <header class="c-masthead" style="view-transition-name:case-eodd">
+    <div class="c-wrap">
+      <p class="c-kicker"><i aria-hidden="true"></i>案例 01 · 为 AI 做设计</p>
+      <h1>EODD · 可解释 AI 决策系统</h1>
+      <p class="c-lede">以七步 EODD 设计法 + 四角色多智能体编排 + 可审计决策轨迹，把单体 AI 的不透明决策，做成可以被理解、被审查的判断过程。</p>
+      <div class="c-meta">
+        <div class="c-meta__i"><span class="c-meta__k">我的角色</span><span class="c-meta__v">研究协作 · N=16 用户对比研究与实证分析</span></div>
+        <div class="c-meta__i"><span class="c-meta__k">发表</span><span class="c-meta__v">Design Science Journal（Cambridge）</span></div>
+        <div class="c-meta__i"><span class="c-meta__k">年份</span><span class="c-meta__v">2025 – 2026</span></div>
+      </div>
+
+      <!-- 结论数字带 -->
+      <div class="c-stats rv">
+        <div class="c-stat">
+          <div class="c-stat__n"><em>d</em> <span data-count data-to="1.61" data-dec="2">1.61</span></div>
+          <div class="c-stat__l">可解释性</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat__n"><span data-count data-to="76.2" data-dec="1">76.2</span><em>%</em></div>
+          <div class="c-stat__l">更偏好 EODD</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat__n"><span data-count data-to="5.66" data-dec="2">5.66</span><em> / 7</em></div>
+          <div class="c-stat__l">专家可行性</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat__n"><em>p =</em> <span data-count data-to="37" data-dec="0" data-prefix=".">.37</span></div>
+          <div class="c-stat__l">心理负担 · 无显著</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="c-wrap">
+
+    <!-- ===================== 概览 ===================== -->
+    <dl class="c-spec rv">
+      <div><dt>问题</dt><dd>单体 AI 决策不透明，带来安全、问责与监管风险。</dd></div>
+      <div><dt>我的角色</dt><dd>研究团队成员之一，负责 N=16 用户对比研究与实证分析，论文作者之一。</dd></div>
+      <div><dt>方法</dt><dd>七步 EODD 设计法 + 四角色多智能体编排 + 可审计决策轨迹。</dd></div>
+      <div><dt>成果</dt><dd>论文发表于 Design Science Journal（Cambridge University Press）。</dd></div>
+    </dl>
+
+    <!-- ===================== 01 背景与问题 ===================== -->
+    <section class="c-chapter" aria-labelledby="ch1">
+      <div class="c-chapter__aside rv"><span class="c-chapter__num">01</span><span class="c-chapter__rule"></span></div>
+      <div class="c-chapter__body">
+        <h2 id="ch1" class="rv">背景与问题</h2>
+        <p class="c-lede rv">当一个系统替人做出判断，却无法说明判断从何而来，风险会同时落在三个方向。</p>
+        <div class="c-block rv">
+          <p class="c-p">LLM 已经进入医疗诊断、金融风控、法律推理等高风险场景。但"单体架构"意味着：一次决策由单个模型一口气生成，出错时既无法理解原因，也无从干预、难以追责。</p>
+          <p class="c-p">更麻烦的是，现有的可解释性方法（LIME、SHAP 等）大多是对模型行为的<strong>事后近似</strong>——它们解释的是"模型可能怎么想"，而不是"这次究竟怎么判断的"。要让人真正信任并监督一个决策系统，需要的是可追溯、可干预的推理过程，而不是一张事后拼出的热力图。</p>
+        </div>
+        <div class="c-block rv">
+          <p class="c-note">三重风险：<b>安全</b>（错误无法拦截）、<b>问责</b>（责任无处落）、<b>监管</b>（合规无从审查）。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 02 方法 ===================== -->
+    <section class="c-chapter" aria-labelledby="ch2">
+      <div class="c-chapter__aside rv"><span class="c-chapter__num">02</span><span class="c-chapter__rule"></span></div>
+      <div class="c-chapter__body">
+        <h2 id="ch2" class="rv">方法</h2>
+        <p class="c-lede rv">七步 EODD 设计法，把一次决策拆成可分配、可编排、可审查的流程。</p>
+
+        <div class="c-block rv">
+          <p class="c-block__title">七步 EODD 设计法</p>
+          <div class="c-list">
+            <div class="c-list__row"><span class="c-list__num">01</span><div><p class="c-list__t">决策情境定义</p><p class="c-list__d">明确这次决策在什么场景、依据什么标准、对谁负责</p></div></div>
+            <div class="c-list__row"><span class="c-list__num">02</span><div><p class="c-list__t">决策分解</p><p class="c-list__d">把一个复合判断拆成若干可独立检验的子问题</p></div></div>
+            <div class="c-list__row"><span class="c-list__num">03</span><div><p class="c-list__t">专用角色分配</p><p class="c-list__d">为每个子问题指派一个专用 LLM 角色</p></div></div>
+            <div class="c-list__row"><span class="c-list__num">04</span><div><p class="c-list__t">编排规则</p><p class="c-list__d">规定角色之间谁先谁后、如何交叉验证</p></div></div>
+            <div class="c-list__row"><span class="c-list__num">05</span><div><p class="c-list__t">决策综合</p><p class="c-list__d">汇总裁决，并记录分歧所在</p></div></div>
+            <div class="c-list__row"><span class="c-list__num">06</span><div><p class="c-list__t">决策轨迹生成</p><p class="c-list__d">输出完整、可审计的推理链路</p></div></div>
+            <div class="c-list__row"><span class="c-list__num">07</span><div><p class="c-list__t">人工审查集成</p><p class="c-list__d">把最终判断权交回人，系统只负责解释与提示</p></div></div>
+          </div>
+        </div>
+
+        <div class="c-block rv">
+          <p class="c-block__title">四角色多智能体架构</p>
+          <div class="c-roles">
+            <div class="c-role"><p class="c-role__en">Reasoner</p><p class="c-role__cn">推理者</p><p class="c-role__d">基于证据给出初步判断，是决策的主要生产者。</p></div>
+            <div class="c-role"><p class="c-role__en">Checker</p><p class="c-role__cn">检查者</p><p class="c-role__d">校验推理链的每一步是否站得住，专挑漏洞。</p></div>
+            <div class="c-role"><p class="c-role__en">Ethics Reviewer</p><p class="c-role__cn">伦理审查者</p><p class="c-role__d">从公平、隐私、影响面等角度提出异议。</p></div>
+            <div class="c-role"><p class="c-role__en">Explainer</p><p class="c-role__cn">解释者</p><p class="c-role__d">把整条轨迹翻译成人能读懂的说明。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 03 验证 ===================== -->
+    <section class="c-chapter" aria-labelledby="ch3">
+      <div class="c-chapter__aside rv"><span class="c-chapter__num">03</span><span class="c-chapter__rule"></span></div>
+      <div class="c-chapter__body">
+        <h2 id="ch3" class="rv">验证</h2>
+        <p class="c-lede rv">三段式验证：先请专家看、再上规模评估、最后做用户实证。</p>
+
+        <div class="c-block rv">
+          <div class="c-phases">
+            <div class="c-phase">
+              <div class="c-phase__k">Phase 1</div>
+              <div><p class="c-phase__t">专家启发式评估</p><p class="c-phase__d">由领域专家判断流程是否可行、解释是否成立。</p><span class="c-phase__n">N = 5</span></div>
+            </div>
+            <div class="c-phase">
+              <div class="c-phase__k">Phase 2</div>
+              <div><p class="c-phase__t">规模化可行性</p><p class="c-phase__d">用 LLM-as-Experts 在更大样本上检验稳定性。</p><span class="c-phase__n">N = 100</span></div>
+            </div>
+            <div class="c-phase">
+              <div class="c-phase__k">Phase 3</div>
+              <div><p class="c-phase__t">用户实证研究</p><p class="c-phase__d">对照实验，比较 EODD 与基线系统在各维度上的表现。</p><span class="c-phase__n">N = 16</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="c-block rv">
+          <p class="c-block__title">效应量对比</p>
+          <div class="chart">
+            <div class="chart__bars">
+              <div class="chart__row">
+                <span class="chart__lab">可解释性</span>
+                <span class="chart__track"><i class="chart__fill" data-v="0.805"></i><i class="chart__thr" style="left:10%"></i><i class="chart__thr" style="left:25%"></i><i class="chart__thr" style="left:40%"></i></span>
+                <span class="chart__val" data-count data-to="1.61" data-dec="2">1.61</span>
+              </div>
+              <div class="chart__row">
+                <span class="chart__lab">可信度</span>
+                <span class="chart__track"><i class="chart__fill" data-v="0.735"></i><i class="chart__thr" style="left:10%"></i><i class="chart__thr" style="left:25%"></i><i class="chart__thr" style="left:40%"></i></span>
+                <span class="chart__val" data-count data-to="1.47" data-dec="2">1.47</span>
+              </div>
+              <div class="chart__row">
+                <span class="chart__lab">错误发现信心</span>
+                <span class="chart__track"><i class="chart__fill" data-v="0.59"></i><i class="chart__thr" style="left:10%"></i><i class="chart__thr" style="left:25%"></i><i class="chart__thr" style="left:40%"></i></span>
+                <span class="chart__val" data-count data-to="1.18" data-dec="2">1.18</span>
+              </div>
+            </div>
+            <div class="chart__axis"><span>0</span><span>0.5</span><span>1.0</span><span>1.5</span><span>2.0</span></div>
+            <p class="chart__note">Cohen's d 效应量，横轴 0–2.0；虚线为小 / 中 / 大效应基准 0.2 / 0.5 / 0.8。三项均达中到大效应。</p>
+          </div>
+          <p class="c-fig__cap rv"><b>图 1 · 效应量对比。</b>用户对比研究（N=16）中，EODD 在可解释性、可信度与错误发现信心三项上均显著优于基线。<span class="c-fig__hint">想看像素风版本？<a href="eodd-data-viz.html">→ EODD 数据可视化画廊</a></span></p>
+        </div>
+
+        <div class="c-block rv">
+          <p class="c-block__title">用户偏好与心理负担</p>
+          <div class="chart">
+            <div class="chart__pref">
+              <div class="chart__bignum"><span data-count data-to="76.2" data-dec="1">76.2</span>%</div>
+              <div class="chart__grid" data-grid data-cols="10" data-total="100" data-lit="76" aria-hidden="true"></div>
+            </div>
+            <p class="chart__note">100 格点阵，每格 = 1%；点亮 = 更偏好 EODD 的受访者比例。</p>
+          </div>
+          <div class="chart rv" style="margin-top:24px;">
+            <div class="chart__paxis">
+              <div class="chart__sig" aria-hidden="true"></div>
+              <div class="chart__aline" aria-hidden="true"></div>
+              <div class="chart__pdot" aria-hidden="true"></div>
+              <span class="chart__plab chart__plab--a">α = .05</span>
+              <span class="chart__plab chart__plab--p">p = .37</span>
+              <span class="chart__plab chart__plab--0">0</span>
+              <span class="chart__plab chart__plab--1">1</span>
+            </div>
+            <p class="chart__note">p = .37 落在显著线右侧 → 两组心理负担无显著差异（淡蓝为 0–α 显著区）。</p>
+          </div>
+          <p class="c-fig__cap rv"><b>图 2 · 偏好与代价。</b>76.2% 的受访者更偏好 EODD；同时心理负担没有显著增加（p = .37）——更透明的过程没有换来认知代价。</p>
+        </div>
+
+        <div class="c-block rv">
+          <p class="c-block__title">专家可行性</p>
+          <div class="chart">
+            <div class="chart__gauge">
+              <div class="chart__segs" aria-hidden="true">
+                <i class="chart__seg lit"></i><i class="chart__seg lit"></i><i class="chart__seg lit"></i><i class="chart__seg lit"></i><i class="chart__seg lit"></i>
+                <i class="chart__seg chart__seg--part lit"></i>
+                <i class="chart__seg"></i>
+              </div>
+              <div class="chart__gnum"><span data-count data-to="5.66" data-dec="2">5.66</span> <em style="font-style:normal;font-size:.5em;color:var(--ink-3)">/ 7</em></div>
+            </div>
+            <p class="chart__note">7 段量表；第 6 段以斜纹表示小数部分 ≈ .66。</p>
+          </div>
+          <p class="c-fig__cap rv"><b>图 3 · 专家可行性。</b>专家评分 5.66 / 7，跨过可用门槛。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 04 结果与影响 ===================== -->
+    <section class="c-chapter" aria-labelledby="ch4">
+      <div class="c-chapter__aside rv"><span class="c-chapter__num">04</span><span class="c-chapter__rule"></span></div>
+      <div class="c-chapter__body">
+        <h2 id="ch4" class="rv">结果与影响</h2>
+        <blockquote class="c-pull rv">把"黑箱"变透明，不是加一层解释，而是重排整个决策过程。</blockquote>
+        <div class="c-block rv">
+          <div class="c-spec">
+            <div><dt>发表</dt><dd>Design Science Journal（Cambridge University Press）</dd></div>
+            <div><dt>研究分工</dt><dd>研究团队成员之一 · N=16 用户对比研究与实证分析 · 论文作者之一</dd></div>
+            <div><dt>方法价值</dt><dd>为高风险 AI 决策提供了一条可审计、可干预、可追责的路径</dd></div>
+          </div>
+        </div>
+
+        <div class="c-block rv">
+          <p class="c-block__title">可验证的产物</p>
+          <div class="c-actions">
+            <a class="c-btn c-btn--primary" href="https://eodd.studio/" target="_blank" rel="noopener">在线体验 EODD Studio <span class="c-btn__ext" aria-hidden="true">↗</span><span class="sr-only">（外部链接，在新标签页打开）</span></a>
+            <a class="c-btn c-btn--ghost" href="assets/EODD_Design_Science_Paper.pdf" target="_blank" rel="noopener">阅读完整论文（PDF）<span class="c-btn__ext" aria-hidden="true">↗</span><span class="sr-only">（PDF 文件，在新标签页打开）</span></a>
+          </div>
+          <p class="c-actions__note">论文：<i>Explicit Orchestrated Decision Design (EODD): A Design Science Method for Human-Centred, Interpretable AI Decision Systems</i></p>
+          <p class="c-actions__note">作者：Nizam Kadir, Jamie Lorenzo Rayos, Tang Ming Hong (Cyril), Ma Zhen, Yuan Ye<br />Design Science Journal · SUTD · 24 页</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 05 复盘 ===================== -->
+    <section class="c-chapter" aria-labelledby="ch5">
+      <div class="c-chapter__aside rv"><span class="c-chapter__num">05</span><span class="c-chapter__rule"></span></div>
+      <div class="c-chapter__body">
+        <h2 id="ch5" class="rv">复盘</h2>
+        <p class="c-lede rv">三件我在这个项目里真正学到的事。</p>
+        <div class="c-block rv">
+          <div class="c-takes">
+            <div class="c-take"><span class="c-take__m">01</span><div><p class="c-take__t">先把贡献边界说清楚</p><p class="c-take__d">我在这个项目里是"研究协作 + 实证分析"，不是方法论首创者。把它写成"主导"，面试时一轮追问就会露馅——诚实标注身份，反而是最稳的表达。</p></div></div>
+            <div class="c-take"><span class="c-take__m">02</span><div><p class="c-take__t">可解释 ≠ 全都摊开</p><p class="c-take__d">把整条推理链毫无筛选地展示，只会淹没使用者。真正起作用的是四角色分工 + 最后的人工审查那一步——它把"看懂"变成了"能干预"。</p></div></div>
+            <div class="c-take"><span class="c-take__m">03</span><div><p class="c-take__t">方法有边界</p><p class="c-take__d">EODD 在需要审计的高风险场景里成立；但对低风险、快节奏的日常决策，七步流程很可能是过度设计。知道它"什么时候不该用"，和方法本身一样重要。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 下一篇 ===================== -->
+    <div class="c-next rv">
+      <a class="c-back" href="index.html">← 返回首页</a>
+      <a class="c-next__i" href="kkh.html" style="text-align:right;">
+        <span class="c-next__k">案例 02 · 用 AI 做设计</span>
+        <span class="c-next__t">KKH PREMs Translation Toolkit →</span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="c-footer" id="contact">
+  <div class="c-wrap">
+    <div class="c-footer__grid">
+      <p class="c-footer__tag">Human-Centered AI 设计师 · 应用化学 × 人本设计。为 AI 做设计，也用 AI 做设计。</p>
+      <div class="c-footer__col">
+        <span class="c-footer__k">案例</span>
+        <a href="eodd.html">EODD · 可解释 AI 决策系统</a>
+        <a href="kkh.html">KKH PREMs Translation Toolkit</a>
+      </div>
+      <div class="c-footer__col">
+        <span class="c-footer__k">联系</span>
+        <a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a>
+      </div>
+    </div>
+    <div class="c-footer__bottom">
+      <span>© 2026 · 保留所有权利</span>
+      <span>Designed with research &amp; AI</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/case.js" defer></script>
+</body>
+</html>

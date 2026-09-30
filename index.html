@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>既懂怎么设计 AI，也懂怎么用 AI 设计 · 作品集</title>
+<meta name="description" content="人本 AI 设计作品集：为 AI 做设计，也用 AI 做设计。EODD 可解释 AI 决策系统、KKH PREMs Translation Toolkit。" />
+<meta name="color-scheme" content="light" />
+
+<!--
+  字体来源（开源，OFL 1.1，加载失败自动回退系统字体）
+  字体已全部自托管于 assets/fonts/，本页不发起任何外部字体请求。
+  Press Start 2P 仅用于 eyebrow 印章；标题衬线 Newsreader + Noto Serif SC；正文 Inter。
+-->
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<link rel="stylesheet" href="assets/case.css" />
+<link rel="stylesheet" href="assets/index.css" />
+
+<script>document.documentElement.classList.add('js');
+window.addEventListener('error',function(){document.documentElement.classList.remove('js');});</script>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+</head>
+<body>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<!-- ============ 顶栏（暖纸毛玻璃；身份 = 像素 mark + 作品集） ============ -->
+<header class="site-header" data-scrolled="false">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#main" aria-label="首页">
+      <svg class="brand__mark" viewBox="0 0 8 8" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true">
+        <rect x="0" y="0" width="2" height="2" fill="#537D96"/>
+        <rect x="3" y="0" width="2" height="2" fill="#3B3D3F"/>
+        <rect x="6" y="0" width="2" height="2" fill="#3B3D3F"/>
+        <rect x="0" y="3" width="2" height="2" fill="#3B3D3F"/>
+        <rect x="3" y="3" width="2" height="2" fill="#537D96"/>
+        <rect x="6" y="3" width="2" height="2" fill="#3B3D3F"/>
+        <rect x="0" y="6" width="2" height="2" fill="#3B3D3F"/>
+        <rect x="3" y="6" width="2" height="2" fill="#3B3D3F"/>
+        <rect x="6" y="6" width="2" height="2" fill="#537D96"/>
+      </svg>
+      <span>作品集</span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#work" aria-current="true">作品</a></li>
+        <li><a class="nav__link" href="#about">关于</a></li>
+        <li><a class="nav__link" href="mailto:Yachin.HCD@outlook.com">联系</a></li>
+      </ul>
+    </nav>
+
+    <p class="status" role="status"><span class="status__dot" aria-hidden="true"></span>OPEN TO WORK</p>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ Hero：编辑式 masthead（左对齐） ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__content">
+      <p class="eyebrow enter--px" style="--d:0ms"><span class="px" aria-hidden="true"></span>HUMAN-CENTERED AI DESIGNER</p>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="enter" style="--d:120ms">既懂怎么设计 AI，</span>
+        <span class="enter" style="--d:180ms">也懂怎么用 AI 设计</span>
+      </h1>
+
+      <p class="hero__sub enter" style="--d:280ms">为 AI 做设计 · 用 AI 做设计</p>
+
+      <div class="hero__cta">
+        <a class="c-btn c-btn--primary enter--scale" style="--d:400ms" href="#work" data-magnetic>
+          <span>查看作品</span>
+          <svg class="px-arrow" viewBox="0 0 8 8" width="12" height="12" shape-rendering="crispEdges" aria-hidden="true">
+            <rect x="0" y="3" width="6" height="2"/><rect x="4" y="1" width="2" height="2"/>
+            <rect x="4" y="5" width="2" height="2"/><rect x="6" y="3" width="2" height="2"/>
+          </svg>
+        </a>
+        <a class="c-btn c-btn--ghost enter--scale" style="--d:460ms" href="#about">关于</a>
+      </div>
+
+      <ul class="stats enter" style="--d:540ms" aria-label="关键指标">
+        <li class="stat"><span class="stat__n">d = 1.61</span><span class="stat__l">可解释性</span></li>
+        <li class="stat"><span class="stat__n">76.2%</span><span class="stat__l">更偏好 EODD</span></li>
+        <li class="stat"><span class="stat__n">5.66 / 7</span><span class="stat__l">专家可行性</span></li>
+        <li class="stat"><span class="stat__n">p = .37</span><span class="stat__l">心理负担 · 无显著</span></li>
+      </ul>
+    </div>
+
+    <div class="horizon" aria-hidden="true"><span class="horizon__px"></span></div>
+    <div class="cursor-spark" id="spark"></div>
+  </section>
+
+  <!-- ============ 案例卡区 ============ -->
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 class="section__title" id="work-title">作品</h2>
+      <ul class="work__grid">
+        <li class="reveal">
+          <a class="card" data-vt="eodd" href="eodd.html">
+            <span class="card__thumb" aria-hidden="true">
+              <img src="assets/ui-shots/eodd-studio-hero.png" alt="" loading="lazy" />
+            </span>
+            <span class="card__index" aria-hidden="true">CASE 01</span>
+            <span class="card__title">EODD · 可解释 AI 决策系统</span>
+            <span class="card__desc">把黑箱决策重构成可理解、可监督的多智能体架构</span>
+            <span class="card__tags">
+              <span class="pill pill--published"><span class="pill__dot"></span>已发表 Design Science Journal</span>
+              <span class="pill">d = 1.61</span>
+            </span>
+            <span class="card__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="card" data-vt="kkh" href="kkh.html">
+            <span class="card__thumb" aria-hidden="true">
+              <img src="assets/ui-shots/01-prems-site.png" alt="" loading="lazy" />
+            </span>
+            <span class="card__index" aria-hidden="true">CASE 02</span>
+            <span class="card__title">KKH PREMs Translation Toolkit</span>
+            <span class="card__desc">用 AI 把一个研究洞察做成被医院采纳的临床工具</span>
+            <span class="card__tags">
+              <span class="pill pill--shipped"><span class="pill__dot"></span>已落地 KK 妇幼医院</span>
+              <span class="pill">48 天 · 5 版原型</span>
+            </span>
+            <span class="card__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 关于 ============ -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <h2 class="section__title" id="about-title">关于</h2>
+
+      <div class="about__cn reveal">
+        <p>本科应用化学，硕士 SUTD 人本设计（2026 届）。做 AI 产品，也做把人放进产品里的设计。</p>
+        <p>先在实验室待了四年，学怎么验证一个假设；再到设计学院，学怎么理解一个人。化学留下的，是对「证据是什么」的追问；人本设计给的，是「这对谁有意义」的视角。这两样，现在都长在工作方式里。</p>
+        <p>工作可以分成两半。<strong>为 AI 做设计</strong>——把不透明的 AI 决策，变成人看得懂、能监督的过程（EODD，发表于 Design Science Journal）。<strong>用 AI 做设计</strong>——把研究洞察快速做成可用的产品，直到被真实机构采纳（KKH PREMs Toolkit，落地于新加坡 KK 妇幼医院）。</p>
+        <p>方式是 AI 原生的：vibe coding 快速成型，AI 辅助设计统一界面，判断留给人和研究。</p>
+      </div>
+
+      <div class="about__en reveal" lang="en">
+        <h3 class="about__en-title">About</h3>
+        <p>BSc in Applied Chemistry; MSc in Human-Centered Design, SUTD (Class of 2026). Designing for AI, and designing with AI.</p>
+        <p>Four years in a chemistry lab, learning to test a hypothesis; then design school, learning to understand a person. Chemistry left a habit of asking “what’s the evidence?”; human-centered design added “and who does it matter to?” Both now shape the way work gets done.</p>
+        <p>The work splits in two. <strong>Designing for AI</strong> — turning opaque AI decisions into processes people can read and oversee (EODD, published in Design Science Journal). <strong>Designing with AI</strong> — turning research insight into usable products, until adopted by a real institution (KKH PREMs Toolkit, deployed at KK Women’s and Children’s Hospital, Singapore).</p>
+        <p>The method is AI-native: vibe coding to prototype fast, AI-assisted design to hold the interface together, judgment left to people and research.</p>
+      </div>
+
+      <ul class="badges reveal">
+        <li class="pill">SUTD HCD ’26</li>
+        <li class="pill">论文发表于 Design Science Journal</li>
+        <li class="pill">Vibe coding + AI 辅助设计</li>
+      </ul>
+
+      <!-- 像素签章：小恐龙退役于此，静止、单色 ink -->
+      <div class="signet reveal" aria-hidden="true">
+        <svg class="signet__mark" viewBox="0 0 32 32" shape-rendering="crispEdges" fill="currentColor">
+          <path d="M16 4h10v1h-10zM16 5h1v1h-1zM25 5h1v1h-1zM16 6h1v1h-1zM25 6h1v1h-1zM16 7h1v1h-1zM25 7h5v1h-5zM16 8h1v1h-1zM29 8h1v1h-1zM15 9h2v1h-2zM29 9h1v1h-1zM9 10h4v1h-4zM15 10h1v1h-1zM29 10h1v1h-1zM6 11h4v1h-4zM12 11h4v1h-4zM25 11h5v1h-5zM6 12h1v1h-1zM9 12h1v1h-1zM12 12h1v1h-1zM15 12h1v1h-1zM21 12h5v1h-5zM4 13h3v1h-3zM9 13h1v1h-1zM12 13h1v1h-1zM15 13h1v1h-1zM21 13h1v1h-1zM4 14h1v1h-1zM21 14h1v1h-1zM0 15h5v1h-5zM21 15h1v1h-1zM0 16h1v1h-1zM20 16h2v1h-2zM0 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM20 18h1v1h-1zM0 19h1v1h-1zM20 19h1v1h-1zM0 20h1v1h-1zM20 20h1v1h-1zM0 21h5v1h-5zM20 21h1v1h-1zM4 22h1v1h-1zM20 22h1v1h-1zM4 23h3v1h-3zM11 23h1v1h-1zM16 23h5v1h-5zM6 24h1v1h-1zM11 24h1v1h-1zM16 24h1v1h-1zM6 25h1v1h-1zM11 25h1v1h-1zM16 25h1v1h-1zM6 26h1v1h-1zM11 26h1v1h-1zM16 26h1v1h-1zM6 27h1v1h-1zM11 27h1v1h-1zM16 27h1v1h-1zM6 28h1v1h-1zM11 28h1v1h-1zM16 28h1v1h-1zM6 29h11v1h-11z"/>
+          <path d="M17 6h8v1h-8zM17 7h8v1h-8zM17 8h4v1h-4zM22 8h3v1h-3zM17 9h12v1h-12zM17 10h8v1h-8zM16 11h5v1h-5zM10 12h2v1h-2zM16 12h5v1h-5zM7 13h2v1h-2zM10 13h2v1h-2zM13 13h2v1h-2zM16 13h5v1h-5zM7 14h2v1h-2zM10 14h2v1h-2zM13 14h2v1h-2zM16 14h5v1h-5zM5 15h15v1h-15zM5 16h15v1h-15zM1 17h19v1h-19zM1 18h19v1h-19zM1 19h19v1h-19zM5 20h15v1h-15zM5 21h15v1h-15zM7 22h4v1h-4zM12 22h4v1h-4zM7 23h4v1h-4zM12 23h4v1h-4zM7 24h4v1h-4zM12 24h4v1h-4zM7 25h4v1h-4zM12 25h4v1h-4zM7 26h4v1h-4zM12 26h4v1h-4zM7 27h4v1h-4zM12 27h4v1h-4z"/>
+          <path d="M17 5h8v1h-8zM25 8h4v1h-4zM16 10h1v1h-1zM10 11h2v1h-2zM7 12h2v1h-2zM13 12h2v1h-2zM5 14h2v1h-2zM9 14h1v1h-1zM12 14h1v1h-1zM15 14h1v1h-1zM1 16h4v1h-4z"/>
+          <path d="M25 10h4v1h-4zM21 11h4v1h-4zM20 15h1v1h-1zM1 20h4v1h-4zM5 22h2v1h-2zM11 22h1v1h-1zM16 22h4v1h-4zM7 28h4v1h-4zM12 28h4v1h-4z"/>
+          <path d="M21 8h1v1h-1z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚（只留邮箱 + 版权） ============ -->
+<footer class="site-footer" id="contact">
+  <div class="wrap site-footer__inner">
+    <a class="footer-mail" href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a>
+    <p class="footer-copy">© 2026</p>
+  </div>
+</footer>
+
+<script src="assets/index.js" defer></script>
+</body>
+</html>
