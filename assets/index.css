@@ -1,0 +1,256 @@
+/* =============================================================================
+   首页 · 暖纸编辑风（方案 B）
+   体：暖纸（令牌沿用 case.css）｜印：像素点缀（logo / eyebrow / 签章 / 火星 / 地平线）
+   纪律：暖纸层 ease-out / spring，像素层 steps()；小字一律 --ink-2
+   依赖：assets/fonts/fonts.css → assets/case.css（令牌与暖纸基座）→ 本文件
+   ========================================================================== */
+
+:root{
+  --f-hud:'Press Start 2P', ui-monospace, 'Courier New', monospace;
+  --f-px:'Fusion Pixel 12px Proportional SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  --e-px:steps(2, end);            /* 像素层：台阶 */
+  --dur-px:120ms;
+}
+
+/* ---------- 跳过链接：暖纸按钮形态 ---------- */
+.skip-link{
+  position:fixed; top:-64px; left:24px; z-index:200;
+  background:var(--accent); color:#fff;
+  font-size:14px; font-weight:500; line-height:1;
+  padding:11px 16px; border-radius:4px; text-decoration:none;
+  transition:top var(--t) var(--ease);
+}
+.skip-link:focus{ top:16px; }
+
+/* ---------- 布局容器（与 .c-wrap 同规格） ---------- */
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 40px; }
+svg{ display:block; }
+
+/* =============================================================================
+   顶栏（暖纸毛玻璃，与案例页 .c-nav 同语言）
+   ========================================================================== */
+.site-header{
+  position:fixed; top:0; left:0; right:0; height:var(--nav-h); z-index:60;
+  background:rgba(248,244,237,.86);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color var(--t) var(--ease), background var(--t) var(--ease);
+}
+.site-header[data-scrolled="true"]{ border-bottom-color:var(--line); }
+.site-header__inner{ height:100%; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+
+.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+  font-size:14px; font-weight:500; color:var(--ink); letter-spacing:.02em; }
+.brand__mark{ width:16px; height:16px; flex:none; }
+
+.nav__list{ display:flex; align-items:center; gap:26px; list-style:none; }
+.nav__link{ position:relative; font-size:14px; color:var(--ink-2); text-decoration:none;
+  transition:color var(--t) var(--ease); }
+.nav__link:hover{ color:var(--accent); }
+.nav__link[aria-current="true"]{ color:var(--ink); }
+.nav__link[aria-current="true"]::after{
+  content:""; position:absolute; left:0; right:0; bottom:-7px; height:1px;
+  background:var(--accent); opacity:.6;
+}
+
+.status{ display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2);
+  border:1px solid var(--line-2); border-radius:20px; padding:5px 12px; }
+.status__dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); flex:none; }
+
+/* =============================================================================
+   Hero · 编辑式 masthead（左对齐）
+   ========================================================================== */
+.hero{ position:relative; overflow:hidden; padding:calc(var(--nav-h) + 96px) 0 96px; }
+.hero__content{ position:relative; z-index:2; }
+
+/* eyebrow：唯一保留的像素字体印章 */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--f-hud); font-size:8px; line-height:16px; letter-spacing:3px;
+  color:var(--accent); text-transform:uppercase;
+}
+.eyebrow .px{ width:5px; height:5px; background:var(--accent); flex:none; }
+
+/* 主标题：暖纸衬线 */
+.hero__title{
+  margin-top:28px; max-width:16em;
+  font-family:var(--serif); font-weight:500;
+  font-size:clamp(40px,5.4vw,68px); line-height:1.12; letter-spacing:-.012em;
+  color:var(--ink); word-break:keep-all; line-break:strict;
+}
+.hero__title span{ display:block; }
+.hero__sub{ margin-top:24px; font-size:18px; line-height:1.6; color:var(--ink-2); }
+
+.hero__cta{ margin-top:40px; display:flex; gap:12px; flex-wrap:wrap; }
+
+/* CTA：复用案例页按钮，补磁吸位移 + 像素箭头 */
+.c-btn{ translate:var(--mx,0) var(--my,0);
+  transition:background var(--t) var(--ease), color var(--t) var(--ease),
+             border-color var(--t) var(--ease), translate 520ms var(--ease); }
+.px-arrow{ width:12px; height:12px; flex:none; fill:currentColor;
+  transition:transform var(--dur-px) var(--e-px); }
+.c-btn:hover .px-arrow{ transform:translateX(3px); }
+
+/* 读数带：暖纸数据带（衬线数值，衬线 tabular-nums 保证对齐） */
+.stats{
+  list-style:none; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;
+  margin-top:clamp(56px,9vh,96px); padding:36px 0;
+  border-top:1px solid var(--line-2); border-bottom:1px solid var(--line-2);
+}
+.stat{ display:flex; flex-direction:column; gap:12px; }
+.stat__n{ font-family:var(--serif); font-weight:400; font-variant-numeric:tabular-nums;
+  font-size:clamp(28px,3.2vw,40px); line-height:1; letter-spacing:-.01em; color:var(--ink); }
+.stat__l{ font-size:13px; color:var(--ink-2); letter-spacing:.02em; }
+
+/* 像素地平线：Hero 底部的像素锚点，兼作视差对象 */
+.horizon{ position:relative; height:1px; margin-top:72px; background:var(--line); }
+.horizon__px{
+  position:absolute; top:-3px; left:0; width:6px; height:6px; background:var(--accent); flex:none;
+  box-shadow:
+     26px 0 0 var(--accent), 42px 0 0 var(--ink),
+    128px 0 0 var(--accent),
+    200px 0 0 var(--ink), 208px 0 0 var(--ink),
+    336px 0 0 var(--accent),
+    512px 0 0 var(--ink),
+    640px 0 0 var(--accent), 648px 0 0 var(--accent);
+  will-change:transform;
+}
+
+/* 光标火星：像素、网格对齐、仅 hero 区 */
+.cursor-spark{
+  position:absolute; top:0; left:0; width:5px; height:5px; background:var(--accent);
+  opacity:0; pointer-events:none; z-index:3;
+  box-shadow:-2px 0 0 var(--accent), 2px 0 0 var(--accent), 0 -2px 0 var(--accent), 0 2px 0 var(--accent);
+  transition:opacity var(--t) var(--ease);
+}
+
+/* =============================================================================
+   区块通用
+   ========================================================================== */
+.section{ padding:96px 0; }
+.section__title{ margin-bottom:48px;
+  font-family:var(--serif); font-weight:500;
+  font-size:clamp(26px,3vw,36px); line-height:1.2; letter-spacing:-.01em; color:var(--ink); }
+
+/* =============================================================================
+   案例卡区（暖纸编辑式：无框，图版 + 文本）
+   ========================================================================== */
+.work__grid{ list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.card{ display:grid; gap:14px; text-decoration:none; color:inherit; }
+.card[data-vt="eodd"]{ view-transition-name:case-eodd; }
+.card[data-vt="kkh"]{ view-transition-name:case-kkh; }
+
+.card__thumb{ position:relative; display:block; aspect-ratio:16/10; overflow:hidden;
+  border:1px solid var(--line); border-radius:6px; background:var(--surface);
+  transition:border-color var(--t) var(--ease); }
+.card:hover .card__thumb{ border-color:var(--line-2); }
+.card__thumb img{ width:100%; height:100%; display:block; object-fit:cover; object-position:top center; }
+
+/* EODD 缩略图：暖纸数据图 */
+.card__thumb--chart{ display:flex; align-items:center; justify-content:center; padding:28px 32px; }
+.mini-chart{ width:100%; display:grid; gap:18px; }
+.mini-chart__cap{ font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); }
+.mini-row{ display:grid; grid-template-columns:96px 1fr 40px; align-items:center; gap:12px; }
+.mini-lab{ font-size:12px; color:var(--ink); white-space:nowrap; }
+.mini-track{ height:8px; border-radius:2px; background:rgba(83,125,150,.12); overflow:hidden; }
+.mini-bar{ display:block; height:100%; width:var(--w); border-radius:2px; background:var(--accent); }
+.mini-val{ font-family:var(--serif); font-size:14px; color:var(--ink);
+  font-variant-numeric:tabular-nums; text-align:right; }
+
+.card__index{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); }
+.card__title{ font-family:var(--serif); font-weight:500; font-size:22px; line-height:1.3;
+  color:var(--ink); transition:color var(--t) var(--ease); }
+.card:hover .card__title{ color:var(--accent); }
+.card__desc{ font-size:14px; line-height:1.7; color:var(--ink-2); }
+.card__tags{ display:flex; flex-wrap:wrap; gap:8px; }
+.card__arrow{ justify-self:end; font-size:18px; line-height:1; color:var(--accent);
+  transition:transform var(--t) var(--ease); }
+.card:hover .card__arrow{ transform:translateX(4px); }
+
+.pill{ display:inline-flex; align-items:center; gap:7px; padding:4px 11px; border-radius:20px;
+  border:1px solid var(--line-2); font-size:12px; color:var(--ink-2); background:transparent; }
+.pill__dot{ width:6px; height:6px; border-radius:50%; background:var(--ink-2); flex:none; }
+.pill--published .pill__dot{ background:var(--accent); }
+.pill--shipped .pill__dot{ background:var(--ok); }
+
+/* =============================================================================
+   关于（中英双版 + 像素签章）
+   ========================================================================== */
+.about__cn{ max-width:var(--measure); }
+.about__cn p{ font-size:17px; line-height:1.8; color:var(--ink); }
+.about__cn p + p{ margin-top:18px; }
+.about__cn strong{ font-weight:600; color:var(--ink); }
+
+.about__en{ max-width:var(--measure); margin-top:36px; padding-top:28px; border-top:1px solid var(--line); }
+.about__en-title{ font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-2); margin-bottom:16px; }
+.about__en p{ font-size:14px; line-height:1.75; color:var(--ink-2); }
+.about__en p + p{ margin-top:12px; }
+.about__en strong{ font-weight:600; color:var(--ink); }
+
+.badges{ list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin-top:32px; }
+
+/* 像素签章：小恐龙退役于此，静止、单色 ink */
+.signet{ display:flex; align-items:center; gap:10px; margin-top:40px;
+  padding-top:24px; border-top:1px solid var(--line); }
+.signet__mark{ width:26px; height:26px; flex:none; color:var(--ink); opacity:.82; }
+
+/* =============================================================================
+   页脚（只留邮箱 + 版权）
+   ========================================================================== */
+.site-footer{ margin-top:96px; padding:40px 0; border-top:1px solid var(--line); }
+.site-footer__inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.footer-mail{ font-size:14px; color:var(--ink); text-decoration:none;
+  transition:color var(--t) var(--ease); }
+.footer-mail:hover,.footer-mail:focus-visible{ color:var(--accent); }
+.footer-copy{ font-size:12px; color:var(--ink-2); }
+
+/* =============================================================================
+   动效：暖纸层 ease-out，像素层 steps()
+   ========================================================================== */
+@media (prefers-reduced-motion:no-preference){
+  html.js .enter{ animation:enterUp var(--dur,320ms) var(--ease) both; animation-delay:var(--d,0ms); }
+  html.js .enter--scale{ animation:enterUp var(--dur,260ms) var(--ease) both; animation-delay:var(--d,0ms); }
+  html.js .enter--px{ animation:enterPx 360ms steps(4,end) both; animation-delay:var(--d,0ms); }
+  html.js .reveal{ opacity:0; transform:translateY(20px);
+    transition:opacity .55s var(--ease), transform .55s var(--ease); }
+  html.js .reveal.is-in{ opacity:1; transform:none; }
+}
+@keyframes enterUp{ from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:none;} }
+@keyframes enterPx{ from{opacity:0; transform:translateX(-8px);} to{opacity:1; transform:none;} }
+
+/* 页面转场：与案例页"纸面展开"一致（暖纸层，不用台阶） */
+@view-transition{ navigation:auto; }
+::view-transition-old(root),::view-transition-new(root){
+  animation-duration:280ms; animation-timing-function:var(--ease);
+}
+@media (prefers-reduced-motion:reduce){
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){ animation:none !important; }
+}
+
+/* =============================================================================
+   响应式
+   ========================================================================== */
+@media (max-width:899px){
+  .wrap{ padding:0 24px; }
+  .section{ padding:72px 0; }
+  .work__grid{ grid-template-columns:1fr; gap:32px; }
+  .hero{ padding-top:calc(var(--nav-h) + 72px); }
+  .stats{ grid-template-columns:repeat(2,1fr); gap:28px; }
+}
+@media (max-width:600px){
+  .wrap{ padding:0 16px; }
+  .section{ padding:56px 0; }
+  .nav__list{ gap:16px; }
+  .status span:not(.status__dot){ display:none; }
+  .status{ padding:6px; gap:0; }
+  .hero__sub{ font-size:16px; }
+  .card__arrow{ display:none; }
+  .mini-row{ grid-template-columns:80px 1fr 38px; gap:10px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  .c-btn,.nav__link,.card__thumb,.card__title,.card__arrow,.footer-mail,.px-arrow,.skip-link{ transition:none !important; }
+}
