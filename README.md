@@ -2,7 +2,9 @@
 
 交互设计师（B 端）· 复杂信息架构与多角色界面 · 从研究到前端实现独立跑通。
 
-线上地址：<https://ymataz.github.io/>
+线上地址：<https://ymataz.github.io/>（根域）
+
+> 2026-11-20：这个站从 `portfolio-2026` 仓库迁到根域仓库 `ymataz.github.io`，旧站（同样在根域）已被本站整体替换并归档。
 
 ## 这本册子在讲什么
 
@@ -16,7 +18,24 @@
 | `work/digest.html` | AI 开源日报 · 端到端自动化 | 个人项目 · MIT 开源 |
 | `work/chair.html` | 人宠共处公共座椅 · 形态概念 | 课程项目 · 小组 |
 
-另有 16 页 A4 横版全册 PDF：`assets/portfolio-2026.pdf`（两版简历也在 `assets/`）。
+另有 16 页 A4 横版全册 PDF：`assets/portfolio-2026.pdf`（中文）与 `assets/portfolio-2026-en.pdf`（英文，同版式同页序）。两版简历也在 `assets/`。
+
+## 双语
+
+站点中英双语，两套页面完全同构，只换文字：
+
+| 中文 | 英文 |
+|---|---|
+| `index.html` | `en/index.html` |
+| `work/kkh.html` | `en/work/kkh.html` |
+| `work/eodd.html` | `en/work/eodd.html` |
+| `work/minimal-design.html` | `en/work/minimal-design.html` |
+| `work/digest.html` | `en/work/digest.html` |
+| `work/chair.html` | `en/work/chair.html` |
+
+切换器在顶栏右侧（`中文 / EN`），每个页面都有。每页 `<head>` 里有三条 `rel="alternate"`（`zh-CN` / `en` / `x-default`），`sitemap.xml` 同步声明了 `xhtml:link` 双向映射。
+
+英文页的 PDF 与简历链接指向英文版（`portfolio-2026-en.pdf` / `yuan-ye-resume-en.pdf`），中文页指向中文版。
 
 ## 技术
 

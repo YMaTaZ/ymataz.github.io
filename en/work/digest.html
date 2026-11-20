@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI open-source daily · End-to-end automation — YUAN YE</title>
+<meta name="description" content="From reading 200 items a day to reading 3. Scrape → model triage and summary → templated image → scheduled push. MIT open source, 13 commits, about 8,900 lines across 24 files.">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI open-source daily · End-to-end automation">
+<meta property="og:description" content="From reading 200 items a day to reading 3.">
+<meta property="og:image" content="https://ymataz.github.io/assets/img/eodd-hero.webp">
+<meta property="og:url" content="https://ymataz.github.io/en/work/digest.html">
+<meta property="og:site_name" content="YUAN YE · Portfolio 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymataz.github.io/en/work/digest.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ymataz.github.io/work/digest.html">
+<link rel="alternate" hreflang="en" href="https://ymataz.github.io/en/work/digest.html">
+<link rel="alternate" hreflang="x-default" href="https://ymataz.github.io/work/digest.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23E9E4DA%27/%3E%3Cpath d=%27M7 8h3.2l5.8 9.2L21.8 8H25l-7.2 11.3V24h-3.4v-4.7z%27 fill=%27%231A2B3C%27/%3E%3Crect x=%2723%27 y=%2722%27 width=%272%27 height=%272%27 fill=%27%232C5A7C%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/motion.css">
+</head>
+<body>
+
+<div class="readbar" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="../../index.html">YUAN YE<span>Portfolio 2026</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../../index.html#work" aria-current="page">Work</a>
+      <a href="../../index.html#how">How I work</a>
+      <a href="../../index.html#about">About</a>
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a>
+      <a href="../../assets/yuan-ye-resume-en.pdf" target="_blank" rel="noopener">Resume PDF</a>
+    </nav>
+    <span class="lang" aria-label="Language / 语言"><a href="../../work/digest.html">中文</a><span class="sep">/</span><a href="digest.html" aria-current="true">EN</a></span>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <div class="case-head">
+      <p class="breadcrumb"><a href="../../index.html">Portfolio</a> / 04 · Automation chain</p>
+      <h1 class="case-title" data-reveal="mask">AI open-source daily</h1>
+      <p class="case-claim" data-reveal="up">From reading 200 items a day to reading 3.</p>
+      <p class="case-claim" style="font-size:clamp(.92rem,1.5vw,1rem);color:var(--soft);margin-top:.6em;">Scrape → model triage and summary → templated image → scheduled push.</p>
+      <dl class="case-meta" data-reveal="up">
+        <div><dt>Time</dt><dd>2026.10</dd></div>
+        <div><dt>Nature</dt><dd>Personal project, sole author</dd></div>
+        <div><dt>Licence</dt><dd>MIT</dd></div>
+        <div><dt>Repository</dt><dd><a href="https://github.com/YMaTaZ/cyber-newspaper" target="_blank" rel="noopener">cyber-newspaper ↗</a></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">01</span>The chain</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">Four segments, each with one place it can fail</h2>
+        <p>I will start with an admission: the only user of this product is me. So its value is not that other people can use it, it is <strong>that I want to open it every day</strong> — and that set the trade-off in every segment.</p>
+
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:18%;">Segment</th><th style="width:32%;">What it does</th><th>What it costs</th></tr></thead>
+          <tbody>
+            <tr><td>01 Scrape</td><td>Structured sources only; no article bodies</td><td>Scraping bodies makes the layout shift at any moment</td></tr>
+            <tr><td>02 Triage and summary</td><td>Rules rank; the model only summarises and compresses</td><td>For the same batch of news, two days must not produce two answers</td></tr>
+            <tr><td>03 Templated image</td><td>Fixed layout, three items per screen</td><td>Layout is fixed, so a long story can only be compressed</td></tr>
+            <tr><td>04 Scheduled push</td><td>Failure must be visible, never silent</td><td>A silent failure is worse than no product</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up" style="margin-top:0;">
+          <div class="row"><div class="k">Scale</div><div class="v">About 200 items a day → 3</div></div>
+          <div class="row"><div class="k">Running</div><div class="v">Scheduled daily; has run continuously for over a month</div></div>
+          <div class="row"><div class="k">Tech</div><div class="v">Node.js · template rendering · scheduled jobs · about 8,900 lines across 24 files · 13 commits</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">02</span>Decision 1 / 2</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">Ranking cannot be handed to the model</h2>
+        <p>The most obvious approach is: throw all of today's news at the model and have it output "the three most important items today". I built that version, then dropped it.</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">The model can output "the three most important items today" directly</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">Letting it judge is less work and smarter</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">Hand the criteria to the model and the output drifts, and cannot be explained</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">I hard-coded the ranking rules; the model only summarises and scores</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">The rules need manual upkeep; new kinds of news get missed</div></div>
+        </div>
+
+        <p>If the same batch of news gives me these three items today and a different three tomorrow, the tool has no credibility. Ranking has to be recomputable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">03</span>Decision 2 / 2</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">Failure has to be visible</h2>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">When the scheduled job failed, there was no daily digest that day</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">A few retries would be enough</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">Silent failure is the worst case: people assume there was no news today</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">On failure it sends one notification: "I broke today"</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">One extra interruption, in exchange for trust</div></div>
+        </div>
+
+        <p>This is the same decision as "failure must be visible" in EODD, and the two confirm each other: <strong>when a system says nothing, people cannot tell "all fine" from "broken"</strong>.</p>
+
+        <h3 data-reveal="up">What one person using it for thirty days learned</h3>
+        <p>One person using it for thirty days will find more problems than five people reviewing it for three — because it is really being used every day. This is the only methodology point I want to make from this project: <strong>a rough version that gets used daily beats a perfect version that gets praised in review</strong>.</p>
+
+        <div class="quote" style="max-width:38em;">
+          It serves me and no one else. I did no multi-user design for "other people might want this" — that is a different job, I did not do it, and I do not write it up as done.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next" data-reveal="up">
+      <span class="lbl">Next</span>
+      <a href="chair.html">05 · Public seating for people and pets <span>Course project · Form concept →</span></a>
+    </div>
+
+    <div class="contact-band" data-reveal="up">
+      <div><span>Email</span><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div>
+      <div><span>Phone</span><a href="tel:+8617857399362">178-5739-9362</a></div>
+      <div><span>GitHub</span><a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">github.com/YMaTaZ</a></div>
+      <div><span>Full book PDF</span><a href="../../assets/portfolio-2026-en.pdf" target="_blank" rel="noopener">Full book (16 pages)</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 YUAN YE · cyber-newspaper, MIT</span>
+    <span><a href="../../index.html">Back to portfolio</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/motion.js" defer></script>
+</body>
+</html>

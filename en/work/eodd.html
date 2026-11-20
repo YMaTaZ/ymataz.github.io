@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EODD · Explainable AI decision interface — YUAN YE</title>
+<meta name="description" content="Making the reasoning at step three reviewable by a second person. EODD explainable multi-agent decision interface: a team project in which the empirical chain was mine.">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EODD · Explainable AI decision interface">
+<meta property="og:description" content="Making the reasoning at step three reviewable by a second person.">
+<meta property="og:image" content="https://ymataz.github.io/assets/img/eodd-hero.webp">
+<meta property="og:url" content="https://ymataz.github.io/en/work/eodd.html">
+<meta property="og:site_name" content="YUAN YE · Portfolio 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymataz.github.io/en/work/eodd.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ymataz.github.io/work/eodd.html">
+<link rel="alternate" hreflang="en" href="https://ymataz.github.io/en/work/eodd.html">
+<link rel="alternate" hreflang="x-default" href="https://ymataz.github.io/work/eodd.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23E9E4DA%27/%3E%3Cpath d=%27M7 8h3.2l5.8 9.2L21.8 8H25l-7.2 11.3V24h-3.4v-4.7z%27 fill=%27%231A2B3C%27/%3E%3Crect x=%2723%27 y=%2722%27 width=%272%27 height=%272%27 fill=%27%232C5A7C%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/motion.css">
+</head>
+<body>
+
+<div class="readbar" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="../../index.html">YUAN YE<span>Portfolio 2026</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../../index.html#work" aria-current="page">Work</a>
+      <a href="../../index.html#how">How I work</a>
+      <a href="../../index.html#about">About</a>
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a>
+      <a href="../../assets/yuan-ye-resume-en.pdf" target="_blank" rel="noopener">Resume PDF</a>
+    </nav>
+    <span class="lang" aria-label="Language / 语言"><a href="../../work/eodd.html">中文</a><span class="sep">/</span><a href="eodd.html" aria-current="true">EN</a></span>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <div class="case-head">
+      <p class="breadcrumb"><a href="../../index.html">Portfolio</a> / 02 · Team research</p>
+      <h1 class="case-title" data-reveal="mask">EODD<br>Explainable AI decision interface</h1>
+      <p class="case-claim" data-reveal="up">Making the reasoning at step three reviewable by a second person.</p>
+
+      <dl class="case-meta" data-reveal="up">
+        <div><dt>Time</dt><dd>2026.04 — 06</dd></div>
+        <div><dt>Nature</dt><dd>Team project; the empirical chain was mine</dd></div>
+        <div><dt>My part</dt><dd>Experiment design · execution and data collection · statistical analysis and result visualisation</dd></div>
+        <div><dt>Submission</dt><dd>To be confirmed</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ CONTEXT ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">01</span>Context · Constraints</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">The problem is not "the explanation is unclear", it is "nobody will read it through"</h2>
+        <p>In high-stakes settings, several agents reason in parallel and a person confirms the last step. The system has to be able to state its own reasoning — and that chain often runs to twenty-odd steps.</p>
+        <p>The conventional approach is to add an explanation: lay the chain out underneath and let the user read. In usability testing, nobody read it. <strong>The real problem is not a lack of information, it is that nobody will read it through.</strong></p>
+        <p>What I had to build was not a more detailed explanation. It was <strong>letting a person jump to a step instead of reading in order</strong>.</p>
+
+        <h3 data-reveal="up">Three constraints</h3>
+        <ul>
+          <li><strong>The decision must be readable.</strong> You cannot ask someone to read the whole chain; that is the same as no explanation.</li>
+          <li><strong>It must be attributable.</strong> Who rejected which step has to be on record.</li>
+          <li><strong>It must not add mental load.</strong> More explanation, without more effort — this was the one I worried about most.</li>
+        </ul>
+
+        <h3 data-reveal="up">My role (boundaries stated plainly)</h3>
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">Figures and visualisation</div><div class="v">Paper figures and data visualisation are mine; the interface direction is mine</div></div>
+          <div class="row"><div class="k">User study</div><div class="v">I designed it, ran it and analysed the data</div></div>
+          <div class="row"><div class="k">Paper writing</div><div class="v">Done with the team; I was not the writer</div></div>
+          <div class="row"><div class="k">Submission</div><div class="v">To be confirmed (could not reach the team)</div></div>
+        </div>
+        <p>The empirical chain — experiment design and stimulus material, recruitment and data collection, data cleaning, statistical analysis, result visualisation — was mine.<span class="dim"> Not mine: coding the interactive prototype, writing the paper. Authorship and submission sit with the team.</span></p>
+
+        <h3 data-reveal="up">Three empirical phases</h3>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:22%;">Phase</th><th style="width:26%;">Sample</th><th>What it tested</th></tr></thead>
+          <tbody>
+            <tr><td>Phase 1</td><td class="n">N = 5 experts</td><td>Expert heuristic walkthrough; first proof that this trace can be read</td></tr>
+            <tr><td>Phase 2</td><td class="n">N = 100 LLMs-as-Experts</td><td>Cross-annotation; whether the judgements replicate</td></tr>
+            <tr><td>Phase 3</td><td class="n">N = 16 within-subjects</td><td>Measured interpretability, trust, error-spotting and mental demand</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-side">
+        <figure class="fig" data-reveal="mask" style="margin-top:0;">
+          <img src="../../assets/img/eodd-hero.webp" alt="EODD Studio online platform hero: the headline reads Build explainable multi-agent AI workflows with transparent decision traces." loading="lazy">
+          <figcaption>The eodd.studio platform hero (design direction, content structure and trade-offs are mine; interaction and prototype coding were done by the team).</figcaption>
+        </figure>
+        <div class="kv" data-reveal="up" style="margin-top:24px;">
+          <div class="row"><div class="k">Platform</div><div class="v"><a href="https://eodd.studio" target="_blank" rel="noopener">eodd.studio ↗</a></div></div>
+          <div class="row"><div class="k">Paper</div><div class="v"><a href="https://ymataz.github.io/assets/EODD_Design_Science_Paper.pdf" target="_blank" rel="noopener">PDF ↗</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECISION ONE ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">02</span>Decision 1 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">Explainable does not mean "give more information"</h2>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">The system's reasoning ran to more than twenty steps</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">Show all of it, and people will trust it</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">Fully expanded, nobody read it; what people want is to jump to a step</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">The trace became a tree that expands, can be flagged and can be rejected</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">"Which step am I on" had to be designed separately, or people get lost in the tree</div></div>
+        </div>
+
+        <p>The tree structure is not the point. The point is letting someone ask the question that actually matters: <strong>"this is the step that is wrong"</strong> — then jump straight to it instead of reading from the top.</p>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up" style="margin-top:0;">
+          <div class="row"><div class="k">From an interview</div><div class="v">"I cannot read twenty steps in five minutes."</div></div>
+          <div class="row"><div class="k">Rejected because of it</div><div class="v">An overview page, and the first version that laid the whole reasoning chain out</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECISION TWO ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">03</span>Decision 2 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">There is no such state as "partly believe"</h2>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">Users sat between "believe all of it" and "do not use it"</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">There would be a middle state of partial belief</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">There is no middle state: people will not make an important decision with something they cannot review</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">Every conclusion carries its evidence; no evidence, no conclusion</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">The system has to keep citations at generation time, moving cost to engineering</div></div>
+        </div>
+
+        <p>That decision turned a design problem into an engineering one: if the interface requires every conclusion to open onto evidence, the system has to retain citations at generation. It cannot be patched in afterwards.</p>
+
+        <h3 data-reveal="up">The two system structures side by side</h3>
+        <p>The figure below is not an illustration; it is a readable re-layout of the structure comparison from the paper: monolithic black box on top, four-role division below — same width, same hierarchy, so what is compared is structure, not visuals.</p>
+
+        <div class="dg">
+          <div class="lbl">MONOLITHIC · SYSTEM X</div>
+          <div class="row">
+            <div class="bx"><span class="t">Input</span><span class="d">evidence</span></div>
+            <div class="ar">→</div>
+            <div class="bx dark" style="flex:2;"><span class="t">Opaque internals</span><span class="d">no record of which step decided what</span></div>
+            <div class="ar">→</div>
+            <div class="bx"><span class="t">Answer</span><span class="d">no trace</span></div>
+          </div>
+          <div class="say">"I have no idea how it got there, so I can't tell if it's right." <i>— Phase 3 participant</i></div>
+
+          <div class="lbl">EODD · SYSTEM Y</div>
+          <div class="row">
+            <div class="bx"><span class="t">Input</span><span class="d">evidence</span></div>
+            <div class="ar">→</div>
+            <div class="bx"><span class="t">Reasoner</span><span class="d">evidence analysis, initial conclusion</span></div>
+            <div class="ar">→</div>
+            <div class="bx"><span class="t">Checker</span><span class="d">constraint &amp; logic validation</span></div>
+            <div class="ar">→</div>
+            <div class="bx"><span class="t">Ethics Reviewer</span><span class="d">principles, values, potential harms</span></div>
+          </div>
+          <div class="row" style="margin-top:6px;">
+            <div class="bx hc" style="flex:1;"><span class="t">Human checkpoint</span><span class="d">inspect &amp; challenge</span></div>
+            <div class="bx hc" style="flex:1.6;"><span class="t">Decision trace</span><span class="d">rationale · contributions · assumptions · confidence</span></div>
+            <div class="bx hc" style="flex:1.4;"><span class="t">Human checkpoint</span><span class="d">override if needed</span></div>
+          </div>
+          <div class="tracebar">Every segment leaves readable fields, so a person standing next to it can reject a step</div>
+          <div class="say">"I can see exactly where the reasoning went wrong." <i>— Phase 3 participant</i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECISION THREE ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">04</span>Decision 3 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">More explanation must not make people more tired</h2>
+        <p>This is the only place in the book where a design assumption was tested by experiment — and what it tested was the thing I myself worried about: with this much explanation added, does cognitive load go up?</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">Concern that added explanation would raise cognitive load</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">The more you look at, the more tired you get</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">p = .37: mental demand did not increase significantly (N=16)</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">Kept the full trace, did not trim it to "save effort"</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">The interface is dense, and density has to be controlled by structure rather than whitespace</div></div>
+        </div>
+
+        <h3 data-reveal="up">The four required fields of a decision trace</h3>
+        <div class="fields">
+          <div class="field"><span class="tag">a</span><span class="nm">Rationale Log</span><span class="ds">The reasoning record for each step: evidence, judgement, conclusion.</span></div>
+          <div class="field"><span class="tag">b</span><span class="nm">Role Contributions</span><span class="ds">Which agent contributed what, attributable to a specific role.</span></div>
+          <div class="field"><span class="tag">c</span><span class="nm">Assumptions</span><span class="ds">Assumptions written down explicitly, each one judgeable as valid or not.</span></div>
+          <div class="field"><span class="tag">d</span><span class="nm">Confidence Scores</span><span class="ds">Each agent's self-rated confidence in its own conclusion.</span></div>
+        </div>
+        <p style="font-size:.86rem;color:var(--faint);">The structure of the paper figure (drawn by me), rewritten as a readable version: from one flow diagram to four fields you can fill in.</p>
+      </div>
+
+      <div class="col-side">
+        <div class="num-block" style="margin-top:0;">
+          <div class="big">d = 1.81</div>
+          <div class="sub">M = 5.11 vs 2.48 · t(15) = 7.23 · p &lt; .001<br>The trace quality gain was the largest of the three.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DATA ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">05</span>Empirical · N=16</div>
+      <div class="col-wide">
+        <h2 data-reveal="up">Four numbers, and only one good result needs explaining</h2>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:22%;">Measure</th><th style="width:18%;">Value</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td>Interpretability</td><td class="n">d = 1.61</td><td>p &lt; .001</td></tr>
+            <tr><td>Trustworthiness</td><td class="n">d = 1.47</td><td>p &lt; .001</td></tr>
+            <tr><td>Error-spotting confidence</td><td class="n">d = 1.18</td><td>p &lt; .001</td></tr>
+            <tr><td>Mental demand</td><td class="n">p = .37</td><td>The thing I worried about did not happen</td></tr>
+            <tr><td>Expert feasibility</td><td class="n">5.66 / 7</td><td>Experts' feasibility rating (out of 7)</td></tr>
+            <tr><td>Preference</td><td class="n">76.2%</td><td>Preferred the EODD interface (183 / 240)</td></tr>
+            <tr><td>Domain friction</td><td class="n">47%</td><td>Share of use cases with no significant friction</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.86rem;color:var(--faint);">Three phases: N=5 experts heuristics → N=100 LLMs-as-Experts → N=16 within-subjects. The paper is team output and its submission status is to be confirmed; the paper figures and data visualisation are mine.</p>
+
+        <div class="quote" style="max-width:38em;">
+          <strong>If that number had come out the other way</strong> — if p had been significant and demand really had gone up, I would have cut the trace's default expansion and kept it collapsed until something goes wrong.<br>
+          Fix the kill criterion first, and the number means something.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next" data-reveal="up">
+      <span class="lbl">Next</span>
+      <a href="minimal-design.html">03 · minimal-design Front-end design rulebook <span>Personal standard · Open source →</span></a>
+    </div>
+
+    <div class="contact-band" data-reveal="up">
+      <div><span>Email</span><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div>
+      <div><span>Phone</span><a href="tel:+8617857399362">178-5739-9362</a></div>
+      <div><span>GitHub</span><a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">github.com/YMaTaZ</a></div>
+      <div><span>Full book PDF</span><a href="../../assets/portfolio-2026-en.pdf" target="_blank" rel="noopener">Full book (16 pages)</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 YUAN YE · EODD is a team project; the empirical chain was mine</span>
+    <span><a href="../../index.html">Back to portfolio</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/motion.js" defer></script>
+</body>
+</html>

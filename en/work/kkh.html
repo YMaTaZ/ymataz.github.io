@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KKH Women's and Children's Hospital · Multi-metric patient experience dashboard — YUAN YE</title>
+<meta name="description" content="Getting one set of survey data nobody finished reading into a five-minute morning meeting. KKH Women's and Children's Hospital patient experience dashboard: the toolkit site and five plans are mine, the Resource Guide and Checklist were done with the team.">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KKH Women's and Children's Hospital · Multi-metric patient experience dashboard">
+<meta property="og:description" content="Getting one set of survey data nobody finished reading into a five-minute morning meeting.">
+<meta property="og:image" content="https://ymataz.github.io/assets/img/px-dashboard.webp">
+<meta property="og:url" content="https://ymataz.github.io/en/work/kkh.html">
+<meta property="og:site_name" content="YUAN YE · Portfolio 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymataz.github.io/en/work/kkh.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ymataz.github.io/work/kkh.html">
+<link rel="alternate" hreflang="en" href="https://ymataz.github.io/en/work/kkh.html">
+<link rel="alternate" hreflang="x-default" href="https://ymataz.github.io/work/kkh.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23E9E4DA%27/%3E%3Cpath d=%27M7 8h3.2l5.8 9.2L21.8 8H25l-7.2 11.3V24h-3.4v-4.7z%27 fill=%27%231A2B3C%27/%3E%3Crect x=%2723%27 y=%2722%27 width=%272%27 height=%272%27 fill=%27%232C5A7C%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/motion.css">
+</head>
+<body>
+
+<div class="readbar" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="../../index.html">YUAN YE<span>Portfolio 2026</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../../index.html#work" aria-current="page">Work</a>
+      <a href="../../index.html#how">How I work</a>
+      <a href="../../index.html#about">About</a>
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a>
+      <a href="../../assets/yuan-ye-resume-en.pdf" target="_blank" rel="noopener">Resume PDF</a>
+    </nav>
+    <span class="lang" aria-label="Language / 语言"><a href="../../work/kkh.html">中文</a><span class="sep">/</span><a href="kkh.html" aria-current="true">EN</a></span>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <div class="case-head">
+      <p class="breadcrumb"><a href="../../index.html">Portfolio</a> / 01 · Real organisation project</p>
+      <h1 class="case-title" data-reveal="mask">KKH Women's and Children's Hospital<br>Multi-metric patient experience dashboard</h1>
+      <p class="case-claim" data-reveal="up">Getting one set of survey data nobody finished reading into a five-minute morning meeting.</p>
+
+      <dl class="case-meta" data-reveal="up">
+        <div><dt>Time</dt><dd>2026.05.21 — 08.20<br>3-month internship</dd></div>
+        <div><dt>Organisation</dt><dd>SingHealth Duke-NUS IPSQ internship<br>Posted to KK Women's and Children's Hospital (KKH)</dd></div>
+        <div><dt>My role</dt><dd>Concept · information architecture · interface · front end<br>Four-person team; the toolkit site and five plans are mine</dd></div>
+        <div><dt>Status</dt><dd>2026.07.17 reported to department heads at the hospital's PREMs dashboard meeting<br>Then the hospital's internal handover process</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ CONTEXT AND CONSTRAINTS ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">01</span>Context · Constraints</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">The problem is not collecting, it is reading</h2>
+        <p>Patient-reported experience measures (PREMs) come back weekly as a batch of surveys and get rolled up into metrics. The data was always there. Nobody was reading it — the real workflow on the ward is paper: what gets opened at the morning meeting is a printed sheet, not a screen.</p>
+        <p>What I had to build was not another better report. It was <strong>turning that batch of data into "what do we do first today" in five minutes</strong>.</p>
+
+        <h3 data-reveal="up">Four constraints (none of them mine to set)</h3>
+        <ul>
+          <li><strong>The two views want different things.</strong> Management reads trend and drivers; the nurse manager reads which two things this shift should watch. Same numbers, two ways of reading them.</li>
+          <li><strong>One screen, a few minutes.</strong> The morning meeting is five minutes. You cannot ask anyone to learn a new tool first.</li>
+          <li><strong>The real workflow is paper.</strong> What gets spread out on the ward is a printed sheet. The screen version has to give way to the paper version.</li>
+          <li><strong>No individual data.</strong> Only operational-level aggregates; no single patient's record was visible.</li>
+        </ul>
+
+        <h3 data-reveal="up">My role</h3>
+        <p>Research (two one-to-one interviews: management 34 minutes, nurse manager 54 minutes, four days apart), architecture (collapsing multiple metrics into one path), interface (four-view toolkit site + eight-page guide), build (framework-free single-file front end). <strong>The toolkit site, the storyboard and the five plans are mine</strong>; the Resource Guide and Checklist were done with the four-person team; the hospital handled requirement sign-off and compliance review.</p>
+      </div>
+
+      <div class="col-side">
+        <figure class="fig" data-reveal="mask" style="margin-top:0;">
+          <img src="../../assets/img/px-dashboard.webp" alt="Quantitative dashboard: a 72.1% patient experience recommendation readout at the top, a threshold colour band and half-month readout table in the middle, and a twelve-month trend below." loading="lazy">
+          <figcaption>Real screenshot from the deliverable: the quantitative dashboard (threshold band, semicircle readout, twelve-month trend). Numbers inside the interface are example values.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECISION ONE ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">02</span>Decision 1 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">Two views, not two sets of requirements</h2>
+        <p>On the same project, management wants less and the nurse manager wants to scan it at a glance. They look contradictory, and this is the moment a designer most easily gets wrong: the instinct is to prioritise requirements.</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">Both roles listed a set of requirements, and they contradicted each other</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">Different requirements means rank them by priority</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">The requirements did not conflict; there were two different situations of use</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">Drop the ranking, split by situation into three layers</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">Almost no interface output in the first two weeks</div></div>
+        </div>
+
+        <h3 data-reveal="up">Three layers are not three interfaces, they are three ways of reading</h3>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:20%;">Situation</th><th style="width:34%;">Who is looking</th><th>The form they get</th></tr></thead>
+          <tbody>
+            <tr><td>Read results</td><td>Management: where the week is heading overall, and what is driving it</td><td>One trend + three core concepts, no interaction</td></tr>
+            <tr><td>Read execution</td><td>Nurse manager: scan the whole first, then drill into the outlier</td><td>One list, printable</td></tr>
+            <tr><td>Read sources</td><td>A layer I added: what is this number based on</td><td>Expandable sources, kept off the main screen</td></tr>
+          </tbody>
+        </table>
+
+        <p>Both people said "I want a page where I can see the data", but one wanted a sentence and the other wanted two things. Compress those into one screen and you get the report nobody is happy with.<span class="dim"> The third layer, "read sources", has no interview quote, and no doctor was interviewed — it comes from my own read of where the PI/QI loop breaks, not from a participant's request.</span></p>
+
+        <div class="quote" data-reveal="up">
+          "First ask who opens it and when. Then ask what features they want."
+          <cite>After this project, my first move on any enterprise project is fixed: split by situation first, talk priority second.</cite>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">What it cost</div><div class="v">Zero interface output for two weeks</div></div>
+          <div class="row"><div class="k">What it bought</div><div class="v">The three-layer split was settled once, and the structure never changed again</div></div>
+          <div class="row"><div class="k">If I did it again</div><div class="v">I would run both interviews a second time — 34 and 54 minutes were enough for the process, not for the resistance</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECISION TWO ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">03</span>Decision 2 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">From a dozen metrics to three numbers</h2>
+        <p>The first version put every metric up, and one screen was stuffed with charts. It is the most typical wrong assumption I have made: more complete information → better judgement.</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">Every metric up, one screen stuffed with charts</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">More complete information means more accurate judgement</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">She looked at the trend first, then drilled into the outlier — and came away with nothing she could say in the meeting</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">Top level keeps three numbers + one sentence; everything else sinks</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">Metrics are now hidden, and each one needs explaining as to why it is not on the first screen</div></div>
+        </div>
+
+        <h3 data-reveal="up">Three standards for the three numbers that stay</h3>
+        <p>Not "pick the three most important". Every number that stays has to meet all three at once; miss one and it sinks:</p>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:20%;">Condition</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Carries direction</td><td>Up or down, never neutral — a neutral number produces no action</td></tr>
+            <tr><td>Carries an object</td><td>Which ward, which metric — not just "overall"</td></tr>
+            <tr><td>Carries a next step</td><td>Act or not, and where — you know what to do after reading it</td></tr>
+          </tbody>
+        </table>
+
+        <h3 data-reveal="up">Counter-example</h3>
+        <p>"Discharge instructions are below target." — that sentence only restates a status. It does not say up or down, and does not say where to act. The reader still has to judge, which means no design was done.</p>
+        <p><strong>The replacement sentence is:</strong> "Of the three metrics, only discharge instructions is heading down; the rest are flat." Same fact, but it carries direction, an object, and hints at the next step.</p>
+
+        <h3 data-reveal="up">Four things cut from the first screen</h3>
+        <ul>
+          <li><strong>Donut progress charts.</strong> The readout needs converting, and nobody converts in five minutes.</li>
+          <li><strong>Year-on-year / month-on-month dual axis.</strong> Put two lines together and the emphasis averages out.</li>
+          <li><strong>Verbatim quotes straight onto the first screen.</strong> A single sentence lands hard, but points nowhere.</li>
+          <li><strong>The leadership "overview".</strong> A different job from "what do we do today"; it moved down to the second layer.</li>
+        </ul>
+        <p>Nothing was deleted, everything was layered — all four are still in the system, they just no longer compete for the first screen.</p>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">Delivered</div><div class="v">Four-view toolkit site + three pieces (8-page guide / 4-step checklist / 7-frame storyboard)</div></div>
+          <div class="row"><div class="k">Plans</div><div class="v">Five parallel plans, complementary not iterative</div></div>
+          <div class="row"><div class="k">Moved forward</div><div class="v">A5 morning-meeting quick-reference card (A5 is a paper size)</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EIGHT-PAGE GUIDE ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">04</span>Interface · Eight-page guide</div>
+      <div class="col-wide">
+        <h2 data-reveal="up">I did not rebuild the dashboard, I built a translation layer</h2>
+        <p>The dashboard is the hospital's existing system. Touching it means touching how they are measured — the hospital said explicitly not to change it. So what I delivered was the layer around it: eight pages on "how to read this screen, and what to do after reading it", usable by any department.</p>
+
+        <div class="screens" data-reveal="up">
+          <figure>
+            <img src="../../assets/img/px-dashboard.webp" alt="The hospital's existing dashboard: a 72.1% patient experience recommendation readout, threshold band and twelve-month trend." loading="lazy">
+            <figcaption><span class="sn">① The hospital's existing dashboard</span>The numbers, thresholds and trends are all there. Nobody tells you what to look at first or what to do after.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../assets/img/guide/rg2-quant.jpg" alt="Guide page 2: one number read three times — centre value, colour band, context." loading="lazy">
+            <figcaption><span class="sn">② Guide page 2</span>One number read three times: centre value → colour band → context. Three months of decline before it counts as real risk.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../assets/img/prems-site.webp" alt="Toolkit site entry page: Cover / Resource Guide / Checklist / Storyboard, four views." loading="lazy">
+            <figcaption><span class="sn">③ I built them into a toolkit site</span>The three pieces packed into one clickable, navigable, printable single-page site. This piece I built myself.</figcaption>
+          </figure>
+        </div>
+
+        <div data-reveal="up" style="margin:clamp(22px,3vw,34px) 0 0;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:16px;">
+            <div class="eyebrow" style="margin:0;">Contents of the eight pages · from setting the measures to being printable</div>
+            <div style="font-size:.78rem; color:var(--faint);">Each page answers one question; only the last page asks the reader to act</div>
+          </div>
+          <div class="guide-strip">
+            <figure style="margin:0;"><img src="../../assets/img/guide/rg1-filters.jpg" alt="Guide page 1: four filters and the risk of misreading." loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">1 Scope<br><span style="color:var(--faint);">Set the filters first</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../../assets/img/guide/rg2-quant.jpg" alt="Guide page 2: one number read in three passes." loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">2 Read<br><span style="color:var(--faint);">Three passes</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../../assets/img/guide/rg3-priority.jpg" alt="Guide page 3: impact × relative performance, pick only one or two focuses." loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">3 Rank<br><span style="color:var(--faint);">Only one or two</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../../assets/img/guide/rg4-prompts.jpg" alt="Guide page 4: prompts for Qualtrics Assist." loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">4 Ask<br><span style="color:var(--faint);">Sentences for the AI</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../../assets/img/guide/rg5-qual.jpg" alt="Guide page 5: verbatim themes are only leads; read the raw comments." loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">5 Verbatim<br><span style="color:var(--faint);">Themes are only leads</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../../assets/img/guide/rg6-ipa.jpg" alt="Guide page 6: importance × performance four quadrants." loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">6 Position<br><span style="color:var(--faint);">Importance × performance</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../../assets/img/guide/rg7-checklist.jpg" alt="Guide page 7: a printable four-step checklist." loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">7 Checklist<br><span style="color:var(--faint);">Four steps, printable</span></figcaption></figure>
+          </div>
+          <p style="margin:14px 0 0; font-size:.8rem; color:var(--faint);">The eight-page guide and the four-step checklist were done with the four-person team; my part is in the role line of the next section.</p>
+        </div>
+
+        <figure class="fig" data-reveal="up" style="margin-top:clamp(20px,3vw,32px);">
+          <img src="../../assets/img/meeting.jpg" alt="The hospital's dashboard meeting on 17 July 2026: two laptops open on the PREMs dashboard, materials spread on the table." loading="lazy">
+          <figcaption>2026.07.17, presenting to department heads at the hospital's PREMs dashboard meeting. The photo keeps only the screens and the table; no attendees appear.</figcaption>
+        </figure>
+
+        <p style="margin-top:clamp(22px,3vw,34px);">The eight pages are numbered in one order: read first, then understand, then act. Each section answers one question, and you only move down once it is answered.</p>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:16%;">Section</th><th style="width:44%;">Question it answers</th><th>Design intent</th></tr></thead>
+          <tbody>
+            <tr><td>Read</td><td>How is today overall, and which item went wrong.</td><td>No mental arithmetic: the page order is the priority order.</td></tr>
+            <tr><td>Understand</td><td>Why this item went wrong, against whom and against last week.</td><td>Three references for the same metric: target line / peer average / its own last week.</td></tr>
+            <tr><td>Act</td><td>This shift, who does what and when.</td><td>Not buttons — four cells with an owner and a time.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECISION THREE ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">05</span>Decision 3 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">It has to be printable</h2>
+        <p>The toolkit site was done, and I thought delivery was done. What was actually true: what she needed was something she could hold — what gets spread out at the morning meeting is paper.</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">The situation</div><div class="v">Toolkit site finished; I considered delivery complete</div></div>
+          <div class="row"><div class="k">What I assumed</div><div class="v">The screen is primary, paper is supplementary</div></div>
+          <div class="row turn"><div class="k">What was actually true</div><div class="v">She needed something she could hold: what gets spread out at the morning meeting is paper</div></div>
+          <div class="row"><div class="k">So I changed</div><div class="v">Made the four-step checklist a printable page, and organised the toolkit site around the paper version</div></div>
+          <div class="row"><div class="k">What it cost</div><div class="v">Screen density was forced down; it can no longer hold the full data set</div></div>
+        </div>
+
+        <h3 data-reveal="up">The three pieces</h3>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:28%;">Piece</th><th style="width:14%;">Size</th><th>In one line</th></tr></thead>
+          <tbody>
+            <tr><td>Resource Guide</td><td class="n">8 pages</td><td>Seven sections plus a cover: scope → readout → ranking → asking → verbatim → positioning → checklist (done with the team)</td></tr>
+            <tr><td>Checklist</td><td class="n">4 steps</td><td>Read → understand → act → 30-day review, with an owner and a pass condition (done with the team)</td></tr>
+            <tr><td>Storyboard</td><td class="n">7 frames</td><td>From opening it to taking action, in seven frames</td></tr>
+          </tbody>
+        </table>
+        <p>The three pieces are not a deliverable list. They are what lets the hospital's people keep using this after I left.</p>
+
+        <h3 data-reveal="up">Five plans, and why the A5 card moved forward</h3>
+        <ul>
+          <li><strong>Five plans</strong>　morning-meeting quick-reference card / terminology card / complaint classification guide / control-chart reading guide / modular activity booklet — proposed in parallel, complementary not iterative</li>
+          <li><strong>Why A5</strong>　what the nurse manager lacks is a sheet of paper she can carry into the meeting, not another system to log into — A5 is a paper size, not a version number</li>
+          <li><strong>The medium argument</strong>　management said in so many words that they did not want a physical card (hundreds of departments means hundreds of copies); the form stayed, the medium became a weekly-generated PDF — that is a trade-off</li>
+        </ul>
+
+        <div class="quote" data-reveal="up">
+          On 2026.07.17 I reported to department heads at the hospital's PREMs dashboard meeting; after that it entered the hospital's internal handover process, carried forward by the project team inside the hospital.<br>
+          It got as far as "someone is willing to carry it on". <strong>That is not a clinical deployment.</strong>
+          <cite>This is also the fixed line I use for KKH on my resume and in this portfolio.</cite>
+        </div>
+
+        <h3 data-reveal="up">Who picks it up</h3>
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">Who</div><div class="v">A nursing management post in the hospital's internal working group; no additional hire</div></div>
+          <div class="row"><div class="k">What they take</div><div class="v">One template + three pieces, not a system that needs maintaining</div></div>
+          <div class="row"><div class="k">To change it</div><div class="v">Swap the metric and edit the copy, swap the ward and edit the card — no need to find me</div></div>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">Seven frames, originals</div><div class="v"><a href="https://ymataz.github.io/assets/kkh-storyboard/1.jpg" target="_blank" rel="noopener">storyboard 1—7 (1920×1080) ↗</a></div></div>
+          <div class="row"><div class="k">Toolkit site</div><div class="v">PREMs Translation Toolkit</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORYBOARD ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">06</span>Storyboard · Seven frames</div>
+      <div class="col-wide">
+        <h2 data-reveal="up">Too much data → acting together</h2>
+        <p>The seven-frame storyboard is for the nurse manager, not for a jury: each frame moves one step, and the last frame is "we act together".</p>
+        <div class="fig-grid" data-reveal="up">
+          <img src="../../assets/img/storyboard-1.webp" alt="Frame 1: too much data." loading="lazy">
+          <img src="../../assets/img/storyboard-2.webp" alt="Frame 2: find the guide." loading="lazy">
+          <img src="../../assets/img/storyboard-3.webp" alt="Frame 3: find the focus." loading="lazy">
+          <img src="../../assets/img/storyboard-4.webp" alt="Frame 4: find the printable checklist." loading="lazy">
+          <img src="../../assets/img/storyboard-5.webp" alt="Frame 5: print it." loading="lazy">
+          <img src="../../assets/img/storyboard-6.webp" alt="Frame 6: check it item by item." loading="lazy">
+          <img src="../../assets/img/storyboard-7.webp" alt="Frame 7: act together." loading="lazy">
+          <div class="cap-cell">
+            <span class="k">The order of the seven frames</span>
+            Too Much Data<br>→ Find The Guide<br>→ Find The Focus<br>→ Find The Printable Checklist<br>→ Print It<br>→ Check It<br>→ Act Together
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">07</span>Reflection</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">Three things I would redo</h2>
+        <p>The biggest risk in this project was not that I did too little. It is that after I finished, there was no second chance to validate it.</p>
+        <ul>
+          <li><strong>I would run the N=3 usability test earlier</strong>, instead of waiting until all five plans had taken shape. Lesson: validation came too late.</li>
+          <li><strong>I would get a printed sheet that was actually in use in week one</strong>, instead of guessing what the paper version looked like. Lesson: I inferred the constraint instead of observing it.</li>
+          <li><strong>I would ask up front who maintains this interface</strong>, instead of assuming someone would pick it up. Lesson: I took handover for granted.</li>
+          <li><strong>I would run both interviews a second time</strong>, instead of settling after one pass each. Lesson: 34 and 54 minutes were enough for the process, not for the resistance, and the sample was two people.</li>
+        </ul>
+
+        <h3 data-reveal="up">Did I ever say no</h3>
+        <p><strong>On this project I did not turn down a single request.</strong> Looking back, that is my biggest gap — I treated "do all of it" as being responsible. Saying no to a request needs three preconditions: someone is asking, you have the right to refuse, and you can carry the consequence. Of the five projects in this book, only KKH met all three — and I did not use it once.</p>
+
+        <div class="quote" style="border-top:1px solid var(--line);padding-top:1.6em;background:none;padding-left:0;padding-right:0;">
+          Three months, five parallel plans, three pieces delivered.<br>
+          <strong>If I did it again, I would move that N=3 test to before the plans took shape.</strong>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">June</div><div class="v">Document study and the two interviews (06/19 management 34 min, 06/23 nurse manager 54 min). No interface in this period.</div></div>
+          <div class="row"><div class="k">Early July</div><div class="v">Five parallel plans took shape, the A5 morning card set as the direction; the three-layer structure locked, the four toolkit views formed.</div></div>
+          <div class="row"><div class="k">Late July</div><div class="v">07/17 reported to department heads; after that, the four toolkit views, the seven-frame storyboard, the Resource Guide and the Checklist.</div></div>
+          <div class="row"><div class="k">Early August</div><div class="v">Written up as clickable HTML and handed to the hospital's internal process.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next" data-reveal="up">
+      <span class="lbl">Next</span>
+      <a href="eodd.html">02 · EODD Explainable AI decision interface <span>Team research · N=16 →</span></a>
+    </div>
+
+    <div class="contact-band" data-reveal="up">
+      <div><span>Email</span><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div>
+      <div><span>Phone</span><a href="tel:+8617857399362">178-5739-9362</a></div>
+      <div><span>GitHub</span><a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">github.com/YMaTaZ</a></div>
+      <div><span>Full book PDF</span><a href="../../assets/portfolio-2026-en.pdf" target="_blank" rel="noopener">Full book (16 pages)</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 YUAN YE · Numbers inside the interface are example values; the structure matches the real dashboard</span>
+    <span><a href="../../index.html">Back to portfolio</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/motion.js" defer></script>
+</body>
+</html>

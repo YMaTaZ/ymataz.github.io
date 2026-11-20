@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>minimal-design · Front-end design rulebook — YUAN YE</title>
+<meta name="description" content="I wrote my design judgement down as a rulebook, because it has to be executable by someone else. RULES.md: 13 sections, about 19,000 characters, 18 commits, MIT open source.">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="minimal-design · Front-end design rulebook">
+<meta property="og:description" content="A rulebook that can reject me: thresholds, gates and a default-reject list.">
+<meta property="og:image" content="https://ymataz.github.io/assets/img/anti-crop.webp">
+<meta property="og:url" content="https://ymataz.github.io/en/work/minimal-design.html">
+<meta property="og:site_name" content="YUAN YE · Portfolio 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymataz.github.io/en/work/minimal-design.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ymataz.github.io/work/minimal-design.html">
+<link rel="alternate" hreflang="en" href="https://ymataz.github.io/en/work/minimal-design.html">
+<link rel="alternate" hreflang="x-default" href="https://ymataz.github.io/work/minimal-design.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23E9E4DA%27/%3E%3Cpath d=%27M7 8h3.2l5.8 9.2L21.8 8H25l-7.2 11.3V24h-3.4v-4.7z%27 fill=%27%231A2B3C%27/%3E%3Crect x=%2723%27 y=%2722%27 width=%272%27 height=%272%27 fill=%27%232C5A7C%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/motion.css">
+</head>
+<body>
+
+<div class="readbar" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="../../index.html">YUAN YE<span>Portfolio 2026</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../../index.html#work" aria-current="page">Work</a>
+      <a href="../../index.html#how">How I work</a>
+      <a href="../../index.html#about">About</a>
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a>
+      <a href="../../assets/yuan-ye-resume-en.pdf" target="_blank" rel="noopener">Resume PDF</a>
+    </nav>
+    <span class="lang" aria-label="Language / 语言"><a href="../../work/minimal-design.html">中文</a><span class="sep">/</span><a href="minimal-design.html" aria-current="true">EN</a></span>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <div class="case-head">
+      <p class="breadcrumb"><a href="../../index.html">Portfolio</a> / 03 · Personal standard</p>
+      <h1 class="case-title" data-reveal="mask">minimal-design<br>Front-end design rulebook</h1>
+      <p class="case-claim" data-reveal="up">I wrote my design judgement down as a rulebook, because it has to be executable by someone else.</p>
+
+      <dl class="case-meta" data-reveal="up">
+        <div><dt>Time</dt><dd>2026.10 — 11</dd></div>
+        <div><dt>Scale</dt><dd>About 19,000 characters · 13 sections · 18 commits</dd></div>
+        <div><dt>Nature</dt><dd>Personal project, MIT open source</dd></div>
+        <div><dt>Repository</dt><dd><a href="https://github.com/YMaTaZ/frontend-assets" target="_blank" rel="noopener">frontend-assets ↗</a></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">01</span>Context</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">Why a rulebook, and not a component library</h2>
+        <p>While building my own portfolio site and a few small tools, I kept hitting the same problem: deciding it all over again every time — how many colours this screen gets, how big the heading is, how wide the line runs. Those decisions are not hard in themselves; what is hard is <strong>redoing them every time, and getting something slightly different each time</strong>.</p>
+        <p>A component library solves repeated parts. I needed to solve repeated judgement. So what I wrote is not code, it is rules — the file is RULES.md, and its subject is the conditions under which you must refuse.</p>
+
+        <h3 data-reveal="up">Decision one: a rule has to be able to say no</h3>
+        <p>A specification that only says "this is how it should be" is not a specification, because it can always be worked around. So the core of this rulebook is an <strong>acceptance checklist</strong> and a <strong>default-reject list</strong>: nine checks, each with an explicit failure condition.</p>
+        <ul>
+          <li>Body contrast below 4.5:1 → fails</li>
+          <li>A weight outside the two allowed → fails (400 and 500 in RULES.md)</li>
+          <li>Two focus animations on one page → fails; delete one (one focus animation per page: at least 8px of movement or 0.3 opacity, 400–800ms)</li>
+        </ul>
+
+        <h3 data-reveal="up">Decision two: it should not have components</h3>
+        <p>At first I meant to build a component set alongside it. I dropped that: once components exist, the rules get taken hostage by them — "because the component only comes in this size". What the rules govern is <strong>structural relationships</strong> (column count, hierarchy, order, area allocation), not pixel values.</p>
+        <p>So instead it ships with: a colour data set (166 colours — 110 neutrals, 56 accents), six self-hosted subset fonts, a type-scale and line-width conversion table, and a seven-step pipeline (two axes → outline → motion claim → equal division → spatial claim → block allocation → accent area accounting), with four gates in between; fail a gate and you do not move on.</p>
+
+        <h3 data-reveal="up">On AI</h3>
+        <p>The rules are mine. Wording and expansion were assisted by a large language model. The criteria, the threshold trade-offs and the reject list are all mine — that part cannot be outsourced, because it is my judgement itself.</p>
+      </div>
+
+      <div class="col-side">
+        <figure class="fig" data-reveal="mask" style="margin-top:0;">
+          <img src="../../assets/img/anti-crop.webp" alt="Screenshot of the anti-patterns page: the left column shows the category default, the right column shows what it looks like after the decision is made." loading="lazy">
+          <figcaption>Real screenshot of anti-patterns.html: left column is the category default, right column is what it looks like after the decision is made. All eight pairs are in the repository.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">02</span>Six thresholds</div>
+      <div class="col-wide">
+        <h2 data-reveal="up">Every number has to be able to say where it comes from</h2>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:20%;">Rule</th><th style="width:26%;">Threshold</th><th>Why this number</th></tr></thead>
+          <tbody>
+            <tr><td>Colours per screen</td><td>≤ 5 colours, one primary only</td><td>Past five, people stop remembering which one is important</td></tr>
+            <tr><td>Accent area</td><td>≤ 8%</td><td>Cross that area and the accent becomes decoration</td></tr>
+            <tr><td>Body contrast</td><td>≥ 4.5:1</td><td>The WCAG AA floor, not an aesthetic choice</td></tr>
+            <tr><td>Large text contrast</td><td>≥ 3:1</td><td>Same source; the threshold is looser for large text</td></tr>
+            <tr><td>Line width</td><td>CJK 32—36 em<br>Latin 65—75 ch · letter-spacing ≥ −0.04em</td><td>Derived from type size and reading path; go past it and lines start getting lost</td></tr>
+            <tr><td>Weights</td><td>only 400 / 500 in RULES.md · 400 / 600 on this site</td><td>Both ends land on a real face, and the middle value goes hollow. The rulebook says 400/500; this site ships 400/600 because Microsoft YaHei has no 500 face — a 500 falls back to Regular and the hierarchy is lost. That is a stated deviation, not a quiet one</td></tr>
+          </tbody>
+        </table>
+
+        <h3 data-reveal="up">Where these numbers come from</h3>
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">Borrowed</div><div class="v">4.5:1 and 3:1 taken from the WCAG AA floor</div></div>
+          <div class="row"><div class="k">Calculated</div><div class="v">32—36 em and 65—75 ch derived from type size</div></div>
+          <div class="row"><div class="k">Tested</div><div class="v">5 colours, 8%, the two weights, one focus animation</div></div>
+        </div>
+
+        <h3 data-reveal="up">Three rules with no numbers</h3>
+        <p>What holds these up is not a threshold but the reason they cannot retreat any further, so they sit in the default-reject list:</p>
+        <ul>
+          <li>No eyebrow above a heading (labels go in the left rail or inline)</li>
+          <li>Blur and transparency belong to the control layer only, never background decoration</li>
+          <li>One division only: 12 columns, never mixed with 6 / 4 / 8</li>
+        </ul>
+
+        <div class="quote" style="max-width:38em;">
+          <strong>Honest boundary:</strong> this is a written specification, not a finished design system — no components, no token files shipped into a real product.<br>
+          I know that, and I do not intend to blur it on a resume.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next" data-reveal="up">
+      <span class="lbl">Next</span>
+      <a href="digest.html">04 · AI open-source daily End-to-end automation <span>Personal tool · MIT →</span></a>
+    </div>
+
+    <div class="contact-band" data-reveal="up">
+      <div><span>Email</span><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div>
+      <div><span>Phone</span><a href="tel:+8617857399362">178-5739-9362</a></div>
+      <div><span>GitHub</span><a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">github.com/YMaTaZ</a></div>
+      <div><span>Full book PDF</span><a href="../../assets/portfolio-2026-en.pdf" target="_blank" rel="noopener">Full book (16 pages)</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 YUAN YE · The rulebook is MIT open source; see frontend-assets</span>
+    <span><a href="../../index.html">Back to portfolio</a></span>
+  </div>
+</footer>
+
+<script src="../../assets/js/motion.js" defer></script>
+</body>
+</html>
