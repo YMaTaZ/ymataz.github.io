@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 开源日报 · 端到端自动化 — 袁烨</title>
+<meta name="description" content="把每天读 200 条，变成每天看 3 条。抓取 → 模型筛选与摘要 → 模板成图 → 定时推送，MIT 开源。">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 开源日报 · 端到端自动化">
+<meta property="og:description" content="把每天读 200 条，变成每天看 3 条。">
+<meta property="og:image" content="https://ymataz.github.io/assets/img/eodd-hero.webp">
+<meta property="og:url" content="https://ymataz.github.io/work/digest.html">
+<meta property="og:site_name" content="袁烨 · 作品集 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymataz.github.io/work/digest.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23E9E4DA%27/%3E%3Cpath d=%27M7 8h3.2l5.8 9.2L21.8 8H25l-7.2 11.3V24h-3.4v-4.7z%27 fill=%27%231A2B3C%27/%3E%3Crect x=%2723%27 y=%2722%27 width=%272%27 height=%272%27 fill=%27%232C5A7C%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/motion.css">
+</head>
+<body>
+
+<div class="readbar" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="../index.html">袁烨 YUAN YE<span>Portfolio 2026</span></a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="../index.html#work" aria-current="page">项目</a>
+      <a href="../index.html#how">做法</a>
+      <a href="../index.html#about">关于</a>
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a>
+      <a href="../assets/yuan-ye-resume-zh.pdf" target="_blank" rel="noopener">简历 PDF</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <div class="case-head">
+      <p class="breadcrumb"><a href="../index.html">作品集</a> / 04 · 自动化链路</p>
+      <h1 class="case-title" data-reveal="mask">AI 开源日报</h1>
+      <p class="case-claim" data-reveal="up">把每天读 200 条，变成每天看 3 条。</p>
+      <p class="case-claim" style="font-size:clamp(.92rem,1.5vw,1rem);color:var(--soft);margin-top:.6em;">抓取 → 模型筛选与摘要 → 模板成图 → 定时推送。</p>
+      <dl class="case-meta" data-reveal="up">
+        <div><dt>时间</dt><dd>2026.10</dd></div>
+        <div><dt>性质</dt><dd>个人项目，独立完成</dd></div>
+        <div><dt>许可</dt><dd>MIT</dd></div>
+        <div><dt>仓库</dt><dd><a href="https://github.com/YMaTaZ/cyber-newspaper" target="_blank" rel="noopener">cyber-newspaper ↗</a></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">01</span>链路</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">四段，每段都有一个会失败的地方</h2>
+        <p>我先承认一件事：这个产品的用户只有我一个。所以它的价值不在「能给别人用」，在<strong>「我每天愿意打开它」</strong>——这也决定了它每一段的取舍。</p>
+
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:18%;">段</th><th style="width:32%;">做什么</th><th>代价</th></tr></thead>
+          <tbody>
+            <tr><td>01 抓取</td><td>只取结构化源，不抓正文</td><td>正文抓取会让版面随时变形</td></tr>
+            <tr><td>02 筛选与摘要</td><td>规则排序，模型只做摘要与压缩</td><td>同一批新闻，两天不能给出两个答案</td></tr>
+            <tr><td>03 模板成图</td><td>固定版式，一屏三条</td><td>版式固定，长的新闻也只能压缩</td></tr>
+            <tr><td>04 定时推送</td><td>失败必须可见，不能静默</td><td>静默失败比没有产品更糟</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up" style="margin-top:0;">
+          <div class="row"><div class="k">规模</div><div class="v">每天约 200 条源 → 3 条</div></div>
+          <div class="row"><div class="k">运行</div><div class="v">每天定时，已连续运行一个多月</div></div>
+          <div class="row"><div class="k">技术</div><div class="v">Node.js · 模板渲染 · 定时任务</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">02</span>判断 1 / 2</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">排序不能交给模型</h2>
+        <p>最直觉的做法是：把今天所有的新闻丢给模型，让它输出「今天最重要的三条」。我做了一版，然后放弃了。</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">当时的处境</div><div class="v">模型可以直接输出「今天最重要的三条」</div></div>
+          <div class="row"><div class="k">我以为</div><div class="v">让它判断更省事、更聪明</div></div>
+          <div class="row turn"><div class="k">实际是</div><div class="v">标准一交给模型，输出就会漂移，且不可解释</div></div>
+          <div class="row"><div class="k">所以我改了</div><div class="v">排序规则由我写死，模型只做摘要与打分</div></div>
+          <div class="row"><div class="k">代价</div><div class="v">规则要人工维护；遇到新类型的新闻会漏</div></div>
+        </div>
+
+        <p>如果同一批新闻，我今天看是这三条、明天看变成另外三条，那这个工具就没有可信度。排序必须可复算。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">03</span>判断 2 / 2</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">失败必须可见</h2>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">当时的处境</div><div class="v">定时任务失败时，当天就没有日报</div></div>
+          <div class="row"><div class="k">我以为</div><div class="v">重试几次就够</div></div>
+          <div class="row turn"><div class="k">实际是</div><div class="v">静默失败最糟：人以为今天没有新闻</div></div>
+          <div class="row"><div class="k">所以我改了</div><div class="v">失败就发一条「今天我挂了」的通知</div></div>
+          <div class="row"><div class="k">代价</div><div class="v">多一次打扰，但换来可信</div></div>
+        </div>
+
+        <p>这条判断和 EODD 里的「失败必须可见」是同一条判断，两处互相印证：<strong>系统不说话的时候，人无法区分「没事」和「坏了」</strong>。</p>
+
+        <h3 data-reveal="up">一个人用三十天，学到了什么</h3>
+        <p>一个人自己用三十天，会比五个人评审三天发现更多问题——因为它每天都在被真的使用。这是我在这个项目里唯一想强调的方法论：<strong>能被每天使用的粗糙版本，胜过被评审夸奖的完美版本</strong>。</p>
+
+        <div class="quote" style="max-width:38em;">
+          它服务的是我一个人；我没有为「别人也想用」做多用户设计——那是另一件事，我没做，也不写成做过。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next" data-reveal="up">
+      <span class="lbl">下一个</span>
+      <a href="chair.html">05 · 人宠共处公共座椅 <span>课程项目 · 形态概念 →</span></a>
+    </div>
+
+    <div class="contact-band" data-reveal="up">
+      <div><span>邮箱</span><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div>
+      <div><span>电话</span><a href="tel:+8617857399362">178-5739-9362</a></div>
+      <div><span>GitHub</span><a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">github.com/YMaTaZ</a></div>
+      <div><span>全册 PDF</span><a href="../assets/portfolio-2026.pdf" target="_blank" rel="noopener">作品集 2026（16 页）</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 袁烨 YUAN YE · cyber-newspaper，MIT</span>
+    <span><a href="../index.html">返回作品集</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/motion.js" defer></script>
+</body>
+</html>

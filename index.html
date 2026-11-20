@@ -1,184 +1,264 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>既懂怎么设计 AI，也懂怎么用 AI 设计 · 作品集</title>
-<meta name="description" content="人本 AI 设计作品集：为 AI 做设计，也用 AI 做设计。EODD 可解释 AI 决策系统、KKH PREMs Translation Toolkit。" />
-<meta name="color-scheme" content="light" />
-
-<!--
-  字体来源（开源，OFL 1.1，加载失败自动回退系统字体）
-  字体已全部自托管于 assets/fonts/，本页不发起任何外部字体请求。
-  Press Start 2P 仅用于 eyebrow 印章；标题衬线 Newsreader + Noto Serif SC；正文 Inter。
--->
-<link rel="stylesheet" href="assets/fonts/fonts.css" />
-<link rel="stylesheet" href="assets/case.css" />
-<link rel="stylesheet" href="assets/index.css" />
-
-<script>document.documentElement.classList.add('js');
-window.addEventListener('error',function(){document.documentElement.classList.remove('js');});</script>
-<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>袁烨 · 交互设计师（B 端）· 作品集 2026</title>
+<meta name="description" content="袁烨，SUTD 人本设计硕士。交互设计师（B 端）：复杂信息架构与多角色界面，从研究到前端实现独立跑通。">
+<meta name="author" content="袁烨 YUAN YE">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="袁烨 · 交互设计师（B 端）· 作品集 2026">
+<meta property="og:description" content="把复杂业务收敛成一条界面动线。KKH 妇女儿童医院多指标看板、EODD 可解释 AI 决策界面、minimal-design 设计规则书。">
+<meta property="og:image" content="https://ymataz.github.io/assets/img/px-dashboard.webp">
+<meta property="og:url" content="https://ymataz.github.io/">
+<meta property="og:site_name" content="袁烨 · 作品集 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymataz.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23E9E4DA%27/%3E%3Cpath d=%27M7 8h3.2l5.8 9.2L21.8 8H25l-7.2 11.3V24h-3.4v-4.7z%27 fill=%27%231A2B3C%27/%3E%3Crect x=%2723%27 y=%2722%27 width=%272%27 height=%272%27 fill=%27%232C5A7C%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/motion.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="readbar" aria-hidden="true"></div>
 
-<!-- ============ 顶栏（暖纸毛玻璃；身份 = 像素 mark + 作品集） ============ -->
-<header class="site-header" data-scrolled="false">
-  <div class="wrap site-header__inner">
-    <a class="brand" href="#main" aria-label="首页">
-      <svg class="brand__mark" viewBox="0 0 8 8" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true">
-        <rect x="0" y="0" width="2" height="2" fill="#537D96"/>
-        <rect x="3" y="0" width="2" height="2" fill="#3B3D3F"/>
-        <rect x="6" y="0" width="2" height="2" fill="#3B3D3F"/>
-        <rect x="0" y="3" width="2" height="2" fill="#3B3D3F"/>
-        <rect x="3" y="3" width="2" height="2" fill="#537D96"/>
-        <rect x="6" y="3" width="2" height="2" fill="#3B3D3F"/>
-        <rect x="0" y="6" width="2" height="2" fill="#3B3D3F"/>
-        <rect x="3" y="6" width="2" height="2" fill="#3B3D3F"/>
-        <rect x="6" y="6" width="2" height="2" fill="#537D96"/>
-      </svg>
-      <span>作品集</span>
-    </a>
-
-    <nav class="nav" aria-label="主导航">
-      <ul class="nav__list">
-        <li><a class="nav__link" href="#work" aria-current="true">作品</a></li>
-        <li><a class="nav__link" href="#about">关于</a></li>
-        <li><a class="nav__link" href="mailto:Yachin.HCD@outlook.com">联系</a></li>
-      </ul>
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="index.html">袁烨 YUAN YE<span>Portfolio 2026</span></a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="index.html#work" aria-current="page">项目</a>
+      <a href="index.html#how">做法</a>
+      <a href="index.html#about">关于</a>
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a>
+      <a href="assets/yuan-ye-resume-zh.pdf" target="_blank" rel="noopener">简历 PDF</a>
     </nav>
-
-    <p class="status" role="status"><span class="status__dot" aria-hidden="true"></span>OPEN TO WORK</p>
   </div>
 </header>
 
-<main id="main">
+<main>
 
-  <!-- ============ Hero：编辑式 masthead（左对齐） ============ -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap hero__content">
-      <p class="eyebrow enter--px" style="--d:0ms"><span class="px" aria-hidden="true"></span>HUMAN-CENTERED AI DESIGNER</p>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero-meta">交互设计师（B 端） · 复杂信息架构与多角色界面 · 2026.08 毕业，可随时到岗</p>
+      <h1 class="display">把复杂业务<em>收敛成一条</em>界面动线。</h1>
 
-      <h1 class="hero__title" id="hero-title">
-        <span class="enter" style="--d:120ms">既懂怎么设计 AI，</span>
-        <span class="enter" style="--d:180ms">也懂怎么用 AI 设计</span>
-      </h1>
+      <div class="hero-body">
+        <div class="hero-copy">
+          <p>同一个项目里，管理层要「更少」、护士长要「能一眼扫」。两个人都说这是需求，但真正不同的不是需求，是使用场景。</p>
+          <p>我的做法是先定谁在什么时刻做决定，再决定屏幕上放什么——所以判断在前，界面在后。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="work/kkh.html">看 KKH 案例 <span class="ar">→</span></a>
+          <a class="btn ghost" href="assets/portfolio-2026.pdf" target="_blank" rel="noopener">下载全册 PDF（16 页）</a>
+        </div>
+      </div>
+    </div>
 
-      <p class="hero__sub enter" style="--d:280ms">为 AI 做设计 · 用 AI 做设计</p>
+    <!-- 首屏大图：进入视口时从 0.94 抬到 1，同时以 0.06 的视差上移 -->
+    <div class="wrap">
+      <figure class="hero-fig" data-parallax="0.05">
+        <div class="hero-fig-frame" data-reveal="scale">
+          <img src="assets/img/px-dashboard.webp" width="1400" height="1458"
+               alt="KKH 患者体验看板：定量指标页，含推荐度仪表盘、十二周趋势与指标阈值图例。"
+               fetchpriority="high" decoding="async">
+        </div>
+        <figcaption>KKH · Quantitative Insight 页。这一屏回答「现在最差的是哪个数」；下一屏才回答「为什么」。</figcaption>
+      </figure>
+    </div>
+  </section>
 
-      <div class="hero__cta">
-        <a class="c-btn c-btn--primary enter--scale" style="--d:400ms" href="#work" data-magnetic>
-          <span>查看作品</span>
-          <svg class="px-arrow" viewBox="0 0 8 8" width="12" height="12" shape-rendering="crispEdges" aria-hidden="true">
-            <rect x="0" y="3" width="6" height="2"/><rect x="4" y="1" width="2" height="2"/>
-            <rect x="4" y="5" width="2" height="2"/><rect x="6" y="3" width="2" height="2"/>
-          </svg>
-        </a>
-        <a class="c-btn c-btn--ghost enter--scale" style="--d:460ms" href="#about">关于</a>
+  <!-- ============ 规格条 ============ -->
+  <section class="specs" aria-label="关键数字">
+    <div class="wrap">
+      <div class="specs-inner">
+        <div class="stat" data-reveal="up">
+          <span class="n"><span data-count="3">3</span><span class="u">个月</span></span>
+          <span class="l">KKH 实习周期<br>从资料研读到交给院方</span>
+        </div>
+        <div class="stat" data-reveal="up">
+          <span class="n"><span data-count="5">5</span><span class="u">个方案</span></span>
+          <span class="l">并行提出、互补不迭代<br>最后推进 A5 晨会速查卡</span>
+        </div>
+        <div class="stat" data-reveal="up">
+          <span class="n"><span data-count="2">2</span><span class="u">场深访</span></span>
+          <span class="l">管理层 34 分钟 / 护士长 54 分钟<br>相隔四天</span>
+        </div>
+        <div class="stat" data-reveal="up">
+          <span class="n">d = <span data-count="1.81" data-dec="2">1.81</span></span>
+          <span class="l">EODD 决策轨迹质量<br>效应量（M=5.11 vs 2.48, p&lt;.001）</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 项目 ============ -->
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-head" data-reveal="up">
+        <div class="sec-num">01</div>
+        <div>
+          <h2>五个项目，按「最像工作」到「最像作业」排</h2>
+          <p class="sec-sub">每个项目开头是背景、约束、我的角色，接着是判断页——写的是「我以为 → 实际是 → 所以我改了 → 代价」。</p>
+        </div>
       </div>
 
-      <ul class="stats enter" style="--d:540ms" aria-label="关键指标">
-        <li class="stat"><span class="stat__n">d = 1.61</span><span class="stat__l">可解释性</span></li>
-        <li class="stat"><span class="stat__n">76.2%</span><span class="stat__l">更偏好 EODD</span></li>
-        <li class="stat"><span class="stat__n">5.66 / 7</span><span class="stat__l">专家可行性</span></li>
-        <li class="stat"><span class="stat__n">p = .37</span><span class="stat__l">心理负担 · 无显著</span></li>
+      <ul class="work-list">
+        <li data-reveal="up">
+          <a href="work/kkh.html">
+            <span class="w-num">01</span>
+            <span>
+              <span class="w-name">KKH 妇女儿童医院 · 多指标患者体验看板</span>
+              <span class="w-line">让一组没人读完的问卷数据，进入 5 分钟的晨会。工具站与五个方案由我独立完成，Resource Guide 与 Checklist 与团队共同完成，交付后进入院方内部对接流程。</span>
+            </span>
+            <span class="w-meta">2026.05 — 08 · 3 个月<br>真实机构 · 实习</span>
+          </a>
+        </li>
+        <li data-reveal="up">
+          <a href="work/eodd.html">
+            <span class="w-num">02</span>
+            <span>
+              <span class="w-name">EODD · 可解释 AI 决策界面</span>
+              <span class="w-line">让第三步的推理，能被第二个人复核。团队项目：实验设计、执行、统计分析与结果可视化的实证环节由我承担。</span>
+            </span>
+            <span class="w-meta">2026.04 — 06 · N=16<br>团队研究 · 实证环节由我承担</span>
+          </a>
+        </li>
+        <li data-reveal="up">
+          <a href="work/minimal-design.html">
+            <span class="w-num">03</span>
+            <span>
+              <span class="w-name">minimal-design · 前端设计规则书</span>
+              <span class="w-line">我给自己的设计判断写了一份规则书，因为它必须能被别人执行。1.9 万字、13 节、18 次提交，公开在 GitHub。</span>
+            </span>
+            <span class="w-meta">2026.10 — 11 · 开源<br>个人项目 · 独立撰写</span>
+          </a>
+        </li>
+        <li data-reveal="up">
+          <a href="work/digest.html">
+            <span class="w-num">04</span>
+            <span>
+              <span class="w-name">AI 开源日报 · 端到端自动化</span>
+              <span class="w-line">把每天读 200 条，变成每天看 3 条。抓取 → 模型筛选与摘要 → 模板成图 → 定时推送，MIT 开源。</span>
+            </span>
+            <span class="w-meta">2026.10 · MIT<br>个人项目 · 独立完成</span>
+          </a>
+        </li>
+        <li data-reveal="up">
+          <a href="work/chair.html">
+            <span class="w-num">05</span>
+            <span>
+              <span class="w-name">人宠共处公共座椅 · 形态概念</span>
+              <span class="w-line">从十人访谈里的「雨树下，人和宠物一起躲雨」，推出共享遮蔽的座体形态；四轮演进，终稿线稿我手绘。课程项目。</span>
+            </span>
+            <span class="w-meta">2025.09 — 12<br>小组项目 · 研究与概念</span>
+          </a>
+        </li>
       </ul>
     </div>
-
-    <div class="horizon" aria-hidden="true"><span class="horizon__px"></span></div>
-    <div class="cursor-spark" id="spark"></div>
   </section>
 
-  <!-- ============ 案例卡区 ============ -->
-  <section class="section work" id="work" aria-labelledby="work-title">
+  <!-- ============ 做法（钉住一屏，滚动点亮四段） ============ -->
+  <section class="sec" id="how" style="padding-bottom:0;">
     <div class="wrap">
-      <h2 class="section__title" id="work-title">作品</h2>
-      <ul class="work__grid">
-        <li class="reveal">
-          <a class="card" data-vt="eodd" href="eodd.html">
-            <span class="card__thumb" aria-hidden="true">
-              <img src="assets/ui-shots/eodd-studio-hero.png" alt="" loading="lazy" />
-            </span>
-            <span class="card__index" aria-hidden="true">CASE 01</span>
-            <span class="card__title">EODD · 可解释 AI 决策系统</span>
-            <span class="card__desc">把黑箱决策重构成可理解、可监督的多智能体架构</span>
-            <span class="card__tags">
-              <span class="pill pill--published"><span class="pill__dot"></span>已发表 Design Science Journal</span>
-              <span class="pill">d = 1.61</span>
-            </span>
-            <span class="card__arrow" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li class="reveal">
-          <a class="card" data-vt="kkh" href="kkh.html">
-            <span class="card__thumb" aria-hidden="true">
-              <img src="assets/ui-shots/01-prems-site.png" alt="" loading="lazy" />
-            </span>
-            <span class="card__index" aria-hidden="true">CASE 02</span>
-            <span class="card__title">KKH PREMs Translation Toolkit</span>
-            <span class="card__desc">用 AI 把一个研究洞察做成被医院采纳的临床工具</span>
-            <span class="card__tags">
-              <span class="pill pill--shipped"><span class="pill__dot"></span>已落地 KK 妇幼医院</span>
-              <span class="pill">48 天 · 5 版原型</span>
-            </span>
-            <span class="card__arrow" aria-hidden="true">→</span>
-          </a>
-        </li>
-      </ul>
+      <div class="sec-head" data-reveal="up">
+        <div class="sec-num">02</div>
+        <div>
+          <h2>我做的是<strong>一条链</strong>，不是一段</h2>
+          <p class="sec-sub">研究 → 信息架构 → 界面 → 前端实现。四段里任何一段交出去，前一段的判断就会在交接处丢掉；所以我习惯自己跑完，至少跑通一次。</p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <div class="pin">
+    <div class="pin-stage">
+      <div class="wrap">
+        <div class="chain">
+          <div>
+            <h3>研究</h3>
+            <p>访谈、民族志、问卷设计。先问「什么时候会打开它」，而不是「要什么功能」。</p>
+            <span class="ev">KKH 两场深访 · EODD N=16 · 座椅 10 人</span>
+          </div>
+          <div>
+            <h3>信息架构</h3>
+            <p>把多角色、多指标、多状态收敛成一条动线：先分层，再定顺序，最后才是页面。</p>
+            <span class="ev">KKH Read / Understand / Act</span>
+          </div>
+          <div>
+            <h3>界面</h3>
+            <p>每一屏只回答一个问题。信息密度靠结构控制，不靠留白遮掩。</p>
+            <span class="ev">KKH 工具站 + 八页指南</span>
+          </div>
+          <div>
+            <h3>前端实现</h3>
+            <p>零框架单文件站、自托管字体、响应式与无障碍。交出去的东西能直接打开。</p>
+            <span class="ev">KKH 交付站 · 两个开源仓库</span>
+          </div>
+        </div>
+        <p class="pin-hint">继续滚动 · 四段依次点亮</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ 关于 ============ -->
-  <section class="section about" id="about" aria-labelledby="about-title">
+  <section class="sec" id="about">
     <div class="wrap">
-      <h2 class="section__title" id="about-title">关于</h2>
-
-      <div class="about__cn reveal">
-        <p>本科应用化学，硕士 SUTD 人本设计（2026 届）。做 AI 产品，也做把人放进产品里的设计。</p>
-        <p>先在实验室待了四年，学怎么验证一个假设；再到设计学院，学怎么理解一个人。化学留下的，是对「证据是什么」的追问；人本设计给的，是「这对谁有意义」的视角。这两样，现在都长在工作方式里。</p>
-        <p>工作可以分成两半。<strong>为 AI 做设计</strong>——把不透明的 AI 决策，变成人看得懂、能监督的过程（EODD，发表于 Design Science Journal）。<strong>用 AI 做设计</strong>——把研究洞察快速做成可用的产品，直到被真实机构采纳（KKH PREMs Toolkit，落地于新加坡 KK 妇幼医院）。</p>
-        <p>方式是 AI 原生的：vibe coding 快速成型，AI 辅助设计统一界面，判断留给人和研究。</p>
+      <div class="sec-head" data-reveal="up">
+        <div class="sec-num">03</div>
+        <div>
+          <h2>关于我，以及我正在补什么</h2>
+        </div>
       </div>
 
-      <div class="about__en reveal" lang="en">
-        <h3 class="about__en-title">About</h3>
-        <p>BSc in Applied Chemistry; MSc in Human-Centered Design, SUTD (Class of 2026). Designing for AI, and designing with AI.</p>
-        <p>Four years in a chemistry lab, learning to test a hypothesis; then design school, learning to understand a person. Chemistry left a habit of asking “what’s the evidence?”; human-centered design added “and who does it matter to?” Both now shape the way work gets done.</p>
-        <p>The work splits in two. <strong>Designing for AI</strong> — turning opaque AI decisions into processes people can read and oversee (EODD, published in Design Science Journal). <strong>Designing with AI</strong> — turning research insight into usable products, until adopted by a real institution (KKH PREMs Toolkit, deployed at KK Women’s and Children’s Hospital, Singapore).</p>
-        <p>The method is AI-native: vibe coding to prototype fast, AI-assisted design to hold the interface together, judgment left to people and research.</p>
-      </div>
+      <div class="about">
+        <div class="about-main">
+          <div class="prose" data-reveal="up">
+            <p>我是袁烨，SUTD（新加坡科技设计大学）人本设计硕士，2025.09—2026.08。本科不是设计科班，转过来之后花了很长时间才明白一件事：<strong>设计的分量不在画面，在决定</strong>。</p>
+            <p>五个项目里只有一个算真实机构交付（KKH）。这个我很清楚，所以不把它写成「已落地」——它是交付后进入院方内部对接流程，由项目团队在院内推进。其余四个是团队研究、个人规范、个人工具和课程项目，册子里都标清楚了。</p>
+            <p>我正在补的三件事：<strong>可交接的文件</strong>（把 KKH 的判断翻译成组件、变量与标注，不只是一张截图）、<strong>可复算的记录</strong>（每个结论都能点开看证据）、<strong>可讲清的两版</strong>（中文 20 分钟、英文 5 分钟）。这三件补齐之后，我才能说自己不是「会画界面」，而是「能被接手」。</p>
+          </div>
 
-      <ul class="badges reveal">
-        <li class="pill">SUTD HCD ’26</li>
-        <li class="pill">论文发表于 Design Science Journal</li>
-        <li class="pill">Vibe coding + AI 辅助设计</li>
-      </ul>
+          <h3 style="font-size:1rem;font-weight:600;margin:2em 0 .7em;">如果只能问一个问题，问这个</h3>
+          <div class="quote" style="margin-top:0;" data-reveal="up">
+            「这五个项目里，哪一个是你真的被别人的约束卡住过的？」
+            <cite>KKH 是唯一一个。整册的顺序与所有不写的话，都是为这个问题准备的。</cite>
+          </div>
+        </div>
 
-      <!-- 像素签章：小恐龙退役于此，静止、单色 ink -->
-      <div class="signet reveal" aria-hidden="true">
-        <svg class="signet__mark" viewBox="0 0 32 32" shape-rendering="crispEdges" fill="currentColor">
-          <path d="M16 4h10v1h-10zM16 5h1v1h-1zM25 5h1v1h-1zM16 6h1v1h-1zM25 6h1v1h-1zM16 7h1v1h-1zM25 7h5v1h-5zM16 8h1v1h-1zM29 8h1v1h-1zM15 9h2v1h-2zM29 9h1v1h-1zM9 10h4v1h-4zM15 10h1v1h-1zM29 10h1v1h-1zM6 11h4v1h-4zM12 11h4v1h-4zM25 11h5v1h-5zM6 12h1v1h-1zM9 12h1v1h-1zM12 12h1v1h-1zM15 12h1v1h-1zM21 12h5v1h-5zM4 13h3v1h-3zM9 13h1v1h-1zM12 13h1v1h-1zM15 13h1v1h-1zM21 13h1v1h-1zM4 14h1v1h-1zM21 14h1v1h-1zM0 15h5v1h-5zM21 15h1v1h-1zM0 16h1v1h-1zM20 16h2v1h-2zM0 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM20 18h1v1h-1zM0 19h1v1h-1zM20 19h1v1h-1zM0 20h1v1h-1zM20 20h1v1h-1zM0 21h5v1h-5zM20 21h1v1h-1zM4 22h1v1h-1zM20 22h1v1h-1zM4 23h3v1h-3zM11 23h1v1h-1zM16 23h5v1h-5zM6 24h1v1h-1zM11 24h1v1h-1zM16 24h1v1h-1zM6 25h1v1h-1zM11 25h1v1h-1zM16 25h1v1h-1zM6 26h1v1h-1zM11 26h1v1h-1zM16 26h1v1h-1zM6 27h1v1h-1zM11 27h1v1h-1zM16 27h1v1h-1zM6 28h1v1h-1zM11 28h1v1h-1zM16 28h1v1h-1zM6 29h11v1h-11z"/>
-          <path d="M17 6h8v1h-8zM17 7h8v1h-8zM17 8h4v1h-4zM22 8h3v1h-3zM17 9h12v1h-12zM17 10h8v1h-8zM16 11h5v1h-5zM10 12h2v1h-2zM16 12h5v1h-5zM7 13h2v1h-2zM10 13h2v1h-2zM13 13h2v1h-2zM16 13h5v1h-5zM7 14h2v1h-2zM10 14h2v1h-2zM13 14h2v1h-2zM16 14h5v1h-5zM5 15h15v1h-15zM5 16h15v1h-15zM1 17h19v1h-19zM1 18h19v1h-19zM1 19h19v1h-19zM5 20h15v1h-15zM5 21h15v1h-15zM7 22h4v1h-4zM12 22h4v1h-4zM7 23h4v1h-4zM12 23h4v1h-4zM7 24h4v1h-4zM12 24h4v1h-4zM7 25h4v1h-4zM12 25h4v1h-4zM7 26h4v1h-4zM12 26h4v1h-4zM7 27h4v1h-4zM12 27h4v1h-4z"/>
-          <path d="M17 5h8v1h-8zM25 8h4v1h-4zM16 10h1v1h-1zM10 11h2v1h-2zM7 12h2v1h-2zM13 12h2v1h-2zM5 14h2v1h-2zM9 14h1v1h-1zM12 14h1v1h-1zM15 14h1v1h-1zM1 16h4v1h-4z"/>
-          <path d="M25 10h4v1h-4zM21 11h4v1h-4zM20 15h1v1h-1zM1 20h4v1h-4zM5 22h2v1h-2zM11 22h1v1h-1zM16 22h4v1h-4zM7 28h4v1h-4zM12 28h4v1h-4z"/>
-          <path d="M21 8h1v1h-1z"/>
-        </svg>
+        <aside class="about-side" data-reveal="up">
+          <div class="kv">
+            <div class="row"><div class="k">教育</div><div class="v">SUTD · M.Sc. Human-Centred Design<br>2025.09 — 2026.08</div></div>
+            <div class="row"><div class="k">所在地</div><div class="v">浙江余姚 · 现居国内</div></div>
+            <div class="row"><div class="k">求职方向</div><div class="v">上海 / 杭州 · 可即刻全职到岗</div></div>
+            <div class="row"><div class="k">岗位</div><div class="v">交互设计师（B 端）· 体验设计师 · 后台 / 企业级产品设计</div></div>
+            <div class="row"><div class="k">行业</div><div class="v">企业级 SaaS · 医疗信息化 · AI 产品</div></div>
+            <div class="row"><div class="k">不看</div><div class="v">纯视觉 UI / GUI · 实体工业设计</div></div>
+            <div class="row"><div class="k">工具</div><div class="v">Figma · Miro · GitHub</div></div>
+            <div class="row"><div class="k">代码</div><div class="v">HTML / CSS / JavaScript · Python · Java</div></div>
+            <div class="row"><div class="k">语言</div><div class="v">中文 · 英文（SUTD 全英文授课与研究环境）</div></div>
+            <div class="row"><div class="k">邮箱</div><div class="v"><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div></div>
+            <div class="row"><div class="k">电话</div><div class="v"><a href="tel:+8617857399362">178-5739-9362</a></div></div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ============ 页脚（只留邮箱 + 版权） ============ -->
-<footer class="site-footer" id="contact">
-  <div class="wrap site-footer__inner">
-    <a class="footer-mail" href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a>
-    <p class="footer-copy">© 2026</p>
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 袁烨 YUAN YE · 本站为手写 HTML/CSS，无框架、无追踪脚本</span>
+    <span>
+      <a href="mailto:Yachin.HCD@outlook.com">邮箱</a> ·
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="assets/portfolio-2026.pdf" target="_blank" rel="noopener">全册 PDF</a>
+    </span>
   </div>
 </footer>
 
-<script src="assets/index.js" defer></script>
+<script src="assets/js/motion.js" defer></script>
 </body>
 </html>

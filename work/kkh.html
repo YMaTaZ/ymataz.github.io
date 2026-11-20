@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KKH 妇女儿童医院 · 多指标患者体验看板 — 袁烨</title>
+<meta name="description" content="让一组没人读完的问卷数据，进入 5 分钟的晨会。KKH 妇女儿童医院患者体验看板：工具站与五个方案由我独立完成，Resource Guide 与 Checklist 与团队共同完成。">
+<meta name="theme-color" content="#E9E4DA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KKH 妇女儿童医院 · 多指标患者体验看板">
+<meta property="og:description" content="让一组没人读完的问卷数据，进入 5 分钟的晨会。">
+<meta property="og:image" content="https://ymataz.github.io/assets/img/px-dashboard.webp">
+<meta property="og:url" content="https://ymataz.github.io/work/kkh.html">
+<meta property="og:site_name" content="袁烨 · 作品集 2026">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ymataz.github.io/work/kkh.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23E9E4DA%27/%3E%3Cpath d=%27M7 8h3.2l5.8 9.2L21.8 8H25l-7.2 11.3V24h-3.4v-4.7z%27 fill=%27%231A2B3C%27/%3E%3Crect x=%2723%27 y=%2722%27 width=%272%27 height=%272%27 fill=%27%232C5A7C%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/motion.css">
+</head>
+<body>
+
+<div class="readbar" aria-hidden="true"></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="../index.html">袁烨 YUAN YE<span>Portfolio 2026</span></a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="../index.html#work" aria-current="page">项目</a>
+      <a href="../index.html#how">做法</a>
+      <a href="../index.html#about">关于</a>
+      <a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">GitHub</a>
+      <a href="../assets/yuan-ye-resume-zh.pdf" target="_blank" rel="noopener">简历 PDF</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <div class="case-head">
+      <p class="breadcrumb"><a href="../index.html">作品集</a> / 01 · 实际机构项目</p>
+      <h1 class="case-title" data-reveal="mask">KKH 妇女儿童医院<br>多指标患者体验看板</h1>
+      <p class="case-claim" data-reveal="up">让一组没人读完的问卷数据，进入 5 分钟的晨会。</p>
+
+      <dl class="case-meta" data-reveal="up">
+        <div><dt>时间</dt><dd>2026.05.21 — 08.20<br>实习三个月</dd></div>
+        <div><dt>机构</dt><dd>SingHealth Duke-NUS IPSQ 实习<br>派驻 KK 妇女儿童医院（KKH）</dd></div>
+        <div><dt>我的角色</dt><dd>方案 · 信息架构 · 界面 · 前端<br>四人团队，工具站与五个方案由我独立完成</dd></div>
+        <div><dt>状态</dt><dd>2026.07.17 向院方各部门负责人汇报<br>之后进入院方内部对接流程</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ 背景与约束 ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">01</span>背景 · 约束</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">问题不在采集，在读</h2>
+        <p>患者报告体验测量（PREMs）每周回收一批问卷，汇总成指标。数据一直都有，问题是没有人在读——一线真实的工作流是纸：晨会上摊开的是一张打印表，不是屏幕。</p>
+        <p>我要做的不是再做一个更好的报表，是<strong>让这批数据在 5 分钟内变成「今天先做什么」</strong>。</p>
+
+        <h3 data-reveal="up">四条约束（都不是我定的）</h3>
+        <ul>
+          <li><strong>两种视角要的不同。</strong>管理层看趋势与驱动因素，护士长看这一班先盯哪两件事——同一批数字，两种读法。</li>
+          <li><strong>一屏只有几分钟。</strong>晨会 5 分钟，不能要求任何人先学一个新工具。</li>
+          <li><strong>真实工作流是纸。</strong>病房里摊开的是打印表，屏幕版必须能让位于纸版。</li>
+          <li><strong>拿不到个体数据。</strong>只有操作层聚合值，任何单个患者的记录都看不到。</li>
+        </ul>
+
+        <h3 data-reveal="up">我的角色</h3>
+        <p>研究（两场一对一深访：管理层 34 分钟、护士长 54 分钟，相隔四天）、架构（把多指标收敛成一条动线）、界面（四视图工具站 + 八页指南）、实现（零框架单文件前端）。<strong>工具站、故事板与五个方案由我独立完成</strong>；Resource Guide 与 Checklist 与四人团队共同完成；院方负责需求确认与合规评审。</p>
+      </div>
+
+      <div class="col-side">
+        <figure class="fig" data-reveal="mask" style="margin-top:0;">
+          <img src="../assets/img/px-dashboard.webp" alt="定量看板：顶部为患者体验推荐度 72.1% 的读数卡，中部为阈值色带与半月读数表，下部为十二个月趋势图。" loading="lazy">
+          <figcaption>交付物真实截图：定量看板（阈值色带、半圆读数、十二个月趋势）。图内数字为界面示例值。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 判断一 ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">02</span>判断 1 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">两种视角，不是两套需求</h2>
+        <p>同一个项目里，管理层要「更少」，护士长要「能一眼扫」。看起来互相矛盾，这是设计里最容易处理错的一刻：直觉是排需求优先级。</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">当时的处境</div><div class="v">两个角色各说了一堆要求，而且互相矛盾</div></div>
+          <div class="row"><div class="k">我以为</div><div class="v">需求不同，那就做需求优先级排序</div></div>
+          <div class="row turn"><div class="k">实际是</div><div class="v">并非要求冲突；是两个不同的使用场景</div></div>
+          <div class="row"><div class="k">所以我改了</div><div class="v">不排优先级，改按场景分三层</div></div>
+          <div class="row"><div class="k">代价</div><div class="v">前两周几乎没有产出任何界面</div></div>
+        </div>
+
+        <h3 data-reveal="up">三层不是三种界面，是三种读法</h3>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:20%;">场景</th><th style="width:34%;">谁在看</th><th>给他的形态</th></tr></thead>
+          <tbody>
+            <tr><td>看结果</td><td>管理层：这一周整体在往哪走、什么在驱动它</td><td>一张趋势 + 三个核心概念，不做交互</td></tr>
+            <tr><td>看执行</td><td>护士长：先扫整体，再钻异常项</td><td>一张清单，能打印</td></tr>
+            <tr><td>看来源</td><td>我自己补的一层：这个数字凭什么</td><td>可展开的来源，不占主屏</td></tr>
+          </tbody>
+        </table>
+
+        <p>两个人说的都是「我想要一个能看数据的页面」，但一个要的是一句话，一个要的是两件事。把这两样压进同一屏，就是那种谁都不满意的报表。<span class="dim">第三层「看来源」没有访谈原话，也没有访谈到医生——它来自我对 PI/QI 断点的判断，不是受访者提出的要求。</span></p>
+
+        <div class="quote" data-reveal="up">
+          「先问谁在什么时候会打开它，再问他想要什么功能。」
+          <cite>这个项目之后，我做 B 端项目的第一动作固定成了「先分场景，再谈优先级」。</cite>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">代价</div><div class="v">前两周零界面产出</div></div>
+          <div class="row"><div class="k">换来的</div><div class="v">三层的分工一次定死，后面不再改结构</div></div>
+          <div class="row"><div class="k">如果重做</div><div class="v">我会把两场深访再做第二遍——34 分钟和 54 分钟只够问到流程，不够问到抵触</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 判断二 ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">03</span>判断 2 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">从十几个指标到三个数</h2>
+        <p>第一版把所有指标都上，一屏挤满了图表。这是我做过最典型的一次「信息更全 → 判断更准」的错误假设。</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">当时的处境</div><div class="v">所有指标都上，一屏挤满了图表</div></div>
+          <div class="row"><div class="k">我以为</div><div class="v">信息更全，判断会更准</div></div>
+          <div class="row turn"><div class="k">实际是</div><div class="v">她第一眼看趋势、第二眼钻异常项，但看完没有一句能带进晨会的话</div></div>
+          <div class="row"><div class="k">所以我改了</div><div class="v">顶层只留三个数 + 一句话，其余下沉</div></div>
+          <div class="row"><div class="k">代价</div><div class="v">有指标被藏起来，得额外解释它为什么不在第一屏</div></div>
+        </div>
+
+        <h3 data-reveal="up">留下三个数的三条标准</h3>
+        <p>不是「选最重要的三个」，而是每个留下的数字都必须同时满足三条，缺一条就下沉：</p>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:20%;">条件</th><th>含义</th></tr></thead>
+          <tbody>
+            <tr><td>带方向</td><td>升还是降，不能中性——中性的数字不产生动作</td></tr>
+            <tr><td>带对象</td><td>哪个病区、哪个指标——不能只说「整体」</td></tr>
+            <tr><td>带下一步</td><td>动不动、动哪里——读完就知道要做什么</td></tr>
+          </tbody>
+        </table>
+
+        <h3 data-reveal="up">反例</h3>
+        <p>「出院说明低于目标。」——这句话只是复述状态，不说是升是降、也不说该动哪里。读者还得自己判断，那就等于没做设计。</p>
+        <p><strong>替换成的一句是：</strong>「三个指标里，只有出院说明在往下走，其余持平。」同样是事实，但它带了方向、对象，也暗示了下一步。</p>
+
+        <h3 data-reveal="up">被砍掉的四样</h3>
+        <ul>
+          <li><strong>环形进度图。</strong>读数要换算，5 分钟里没人换算。</li>
+          <li><strong>同比 / 环比双轴。</strong>两条线放一起，重点会平均掉。</li>
+          <li><strong>原话直接上首屏。</strong>单句有杀伤力，但不指向下一步。</li>
+          <li><strong>领导视角的「总览」。</strong>与「今天做什么」是两件事，退到第二层。</li>
+        </ul>
+        <p>不是删掉，是分层——四样都还在系统里，只是不再抢第一屏。</p>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">交付</div><div class="v">四视图工具站 + 三件套（8 页指南 / 4 步清单 / 7 帧分镜）</div></div>
+          <div class="row"><div class="k">方案</div><div class="v">五个并行方案，互补不迭代</div></div>
+          <div class="row"><div class="k">推进方向</div><div class="v">A5 晨会速查卡（A5 是纸张尺寸）</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 八页指南 ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">04</span>界面 · 八页指南</div>
+      <div class="col-wide">
+        <h2 data-reveal="up">我没有重做看板，我做的是翻译层</h2>
+        <p>看板是院方既有的系统，动它等于动他们的考核口径——院方明确说过不要改。所以这次交付的是外面那一层：把「这一屏该怎么读、读完做什么」写成八页，任何科室都能照着用。</p>
+
+        <div class="screens" data-reveal="up">
+          <figure>
+            <img src="../assets/img/px-dashboard.webp" alt="院方既有看板：患者体验推荐度 72.1% 的读数卡、阈值色带与十二个月趋势。" loading="lazy">
+            <figcaption><span class="sn">① 院方既有的看板</span>数字、阈值、趋势都在。没人告诉你先看哪个、看完做什么。</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/img/guide/rg2-quant.jpg" alt="指南第 2 页：一个数分三次读，中心值、色带、上下文。" loading="lazy">
+            <figcaption><span class="sn">② 指南第 2 页</span>一个数分三次读：中心值 → 色带 → 上下文。连降三个月才算真风险。</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/img/prems-site.webp" alt="工具站入口页：Cover / Resource Guide / Checklist / Storyboard 四个视图。" loading="lazy">
+            <figcaption><span class="sn">③ 我把它们做成工具站</span>三件套装进一个可点、可导航、可打印的单页站。这一件由我独立实现。</figcaption>
+          </figure>
+        </div>
+
+        <div data-reveal="up" style="margin:clamp(22px,3vw,34px) 0 0;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:16px;">
+            <div class="eyebrow" style="margin:0;">八页的目录 · 从设口径到能打印</div>
+            <div style="font-size:.78rem; color:var(--faint);">每一页只回答一个问题；最后一页才让读者动手</div>
+          </div>
+          <div class="guide-strip">
+            <figure style="margin:0;"><img src="../assets/img/guide/rg1-filters.jpg" alt="指南第 1 页：四个筛选器与误读风险。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">1 口径<br><span style="color:var(--faint);">先设筛选器</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../assets/img/guide/rg2-quant.jpg" alt="指南第 2 页：一个数三次读完。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">2 读数<br><span style="color:var(--faint);">三次读完</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../assets/img/guide/rg3-priority.jpg" alt="指南第 3 页：影响 × 相对表现，只选一两个焦点。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">3 排序<br><span style="color:var(--faint);">只选一两个</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../assets/img/guide/rg4-prompts.jpg" alt="指南第 4 页：给 Qualtrics Assist 的提示词。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">4 提问<br><span style="color:var(--faint);">给 AI 的句式</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../assets/img/guide/rg5-qual.jpg" alt="指南第 5 页：患者原话主题只是线索，要读原始评论。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">5 原话<br><span style="color:var(--faint);">主题只是线索</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../assets/img/guide/rg6-ipa.jpg" alt="指南第 6 页：重要度 × 表现四象限。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">6 定位<br><span style="color:var(--faint);">重要 × 表现</span></figcaption></figure>
+            <figure style="margin:0;"><img src="../assets/img/guide/rg7-checklist.jpg" alt="指南第 7 页：能打印的四步清单。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">7 清单<br><span style="color:var(--faint);">能打印的四步</span></figcaption></figure>
+          </div>
+          <p style="margin:14px 0 0; font-size:.8rem; color:var(--faint);">八页指南与四步清单为四人团队共同完成；我的部分见下一节的角色行。</p>
+        </div>
+
+        <figure class="fig" data-reveal="up" style="margin-top:clamp(20px,3vw,32px);">
+          <img src="../assets/img/meeting.jpg" alt="2026 年 7 月 17 日院方看板会议现场：两台笔记本打开 PREMs 看板，桌上摊着资料。" loading="lazy">
+          <figcaption>2026.07.17，在院方 PREMs 看板会议上向各部门负责人汇报。照片只保留屏幕与桌面，不出现与会人员。</figcaption>
+        </figure>
+
+        <p style="margin-top:clamp(22px,3vw,34px);">八页按同一个顺序编：先读、再懂、后做。每一段只回答一个问题，答完才能往下走。</p>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:16%;">段</th><th style="width:44%;">回答的问题</th><th>设计意图</th></tr></thead>
+          <tbody>
+            <tr><td>Read</td><td>今天整体怎么样，哪一项出了事。</td><td>不让人做加法：页面的顺序，就是优先级。</td></tr>
+            <tr><td>Understand</td><td>这一项为什么出了事，和谁比、跟上周比。</td><td>同一指标给三种参照：目标线 / 同级均值 / 自己上周。</td></tr>
+            <tr><td>Act</td><td>今天这一班，谁在什么时候做什么。</td><td>不是按钮，是四个带责任人和时间的格子。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 判断三 ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">05</span>判断 3 / 3</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">它必须能打印</h2>
+        <p>工具站做完了，我以为交付完成。实际是：她要的是能拿在手上的东西——晨会上摊开的是纸。</p>
+
+        <div class="dec" data-reveal="up">
+          <div class="row"><div class="k">当时的处境</div><div class="v">工具站做完了，我认为交付完成</div></div>
+          <div class="row"><div class="k">我以为</div><div class="v">屏幕是主，纸是补充</div></div>
+          <div class="row turn"><div class="k">实际是</div><div class="v">她要的是能拿在手上的东西：晨会上摊开的是纸</div></div>
+          <div class="row"><div class="k">所以我改了</div><div class="v">四步清单做成能打印的一页，工具站围绕纸版组织</div></div>
+          <div class="row"><div class="k">代价</div><div class="v">屏幕的信息密度被迫降低，装不下全量数据</div></div>
+        </div>
+
+        <h3 data-reveal="up">三件套</h3>
+        <table class="t" data-reveal="up">
+          <thead><tr><th style="width:28%;">件</th><th style="width:14%;">量</th><th>一句话</th></tr></thead>
+          <tbody>
+            <tr><td>Resource Guide</td><td class="n">8 页</td><td>七节加封面：口径 → 读数 → 排序 → 提问 → 原话 → 定位 → 清单（团队共同完成）</td></tr>
+            <tr><td>Checklist</td><td class="n">4 步</td><td>读 → 懂 → 做 → 30 天复看，带责任人与结果判定（团队共同完成）</td></tr>
+            <tr><td>Storyboard</td><td class="n">7 帧</td><td>从打开到采取行动，七帧走完</td></tr>
+          </tbody>
+        </table>
+        <p>三件套不是交付物清单，是让院方的人在我离开之后还能继续用。</p>
+
+        <h3 data-reveal="up">五个方案，为什么推进 A5 卡</h3>
+        <ul>
+          <li><strong>五个方案</strong>　晨会速查卡 / 术语速查卡 / 投诉分类指南 / 控制图看图指南 / 模块化活动册 —— 并行提出，互补不迭代</li>
+          <li><strong>为什么选 A5</strong>　护士长缺的是一张能带进晨会的纸，不是又一个要登录的系统 —— A5 是纸张尺寸，不是版本号</li>
+          <li><strong>介质之争</strong>　管理层原话不要实体卡（几百个部门就是几百份）；形式保留，介质改成每周生成的 PDF —— 这是取舍</li>
+        </ul>
+
+        <div class="quote" data-reveal="up">
+          2026.07.17，在院方 PREMs 看板会议上向各部门负责人汇报；之后进入院方内部对接流程，由项目团队在院内推进。<br>
+          它走到「有人愿意接着做」这一步，<strong>不是临床部署</strong>。
+          <cite>这也是我在简历与作品集里对 KKH 的固定口径。</cite>
+        </div>
+
+        <h3 data-reveal="up">谁来接手</h3>
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">接的人</div><div class="v">院方内部工作组护理管理岗，不额外招人</div></div>
+          <div class="row"><div class="k">接的是</div><div class="v">一份模板 + 三件套，不是要人维护的系统</div></div>
+          <div class="row"><div class="k">改起来</div><div class="v">换指标改文案、换病区改卡，不用找我</div></div>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">七帧原图</div><div class="v"><a href="https://ymataz.github.io/assets/kkh-storyboard/1.jpg" target="_blank" rel="noopener">storyboard 1—7（1920×1080）↗</a></div></div>
+          <div class="row"><div class="k">工具站</div><div class="v">PREMs Translation Toolkit</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 分镜 ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">06</span>分镜 · 七帧</div>
+      <div class="col-wide">
+        <h2 data-reveal="up">数据太多 → 一起行动</h2>
+        <p>七帧分镜是给护士长看的，不是给评委看的：每一帧只前进一步，最后一帧是「一起动手」。</p>
+        <div class="fig-grid" data-reveal="up">
+          <img src="../assets/img/storyboard-1.webp" alt="第 1 帧：太多数据。" loading="lazy">
+          <img src="../assets/img/storyboard-2.webp" alt="第 2 帧：找到指南。" loading="lazy">
+          <img src="../assets/img/storyboard-3.webp" alt="第 3 帧：找到焦点。" loading="lazy">
+          <img src="../assets/img/storyboard-4.webp" alt="第 4 帧：找到可打印清单。" loading="lazy">
+          <img src="../assets/img/storyboard-5.webp" alt="第 5 帧：打印出来。" loading="lazy">
+          <img src="../assets/img/storyboard-6.webp" alt="第 6 帧：逐项核对。" loading="lazy">
+          <img src="../assets/img/storyboard-7.webp" alt="第 7 帧：一起行动。" loading="lazy">
+          <div class="cap-cell">
+            <span class="k">七帧的顺序</span>
+            Too Much Data<br>→ Find The Guide<br>→ Find The Focus<br>→ Find The Printable Checklist<br>→ Print It<br>→ Check It<br>→ Act Together
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 反思 ============ -->
+  <section class="case-sec">
+    <div class="wrap grid">
+      <div class="rail" data-reveal="up"><span class="n">07</span>反思</div>
+
+      <div class="col-main">
+        <h2 data-reveal="up">三个如果重做</h2>
+        <p>这个项目最大的风险不是做得不够，是我做完之后，没有第二次机会验证它。</p>
+        <ul>
+          <li><strong>我会更早做那次 N=3 可用性测试</strong>，而不是等五个方案都成形之后。教训：验证太晚。</li>
+          <li><strong>我会在第一周就拿到一张真实在用的打印表</strong>，而不是自己推测纸版长什么样。教训：约束靠推测，不靠观察。</li>
+          <li><strong>我会把「谁在维护这套界面」提前问清楚</strong>，而不是默认有人接。教训：交接想当然。</li>
+          <li><strong>我会把两场深访再做第二遍</strong>，而不是各问一次就定稿。教训：34 分钟和 54 分钟只够问到流程，不够问到抵触，样本就两个人。</li>
+        </ul>
+
+        <h3 data-reveal="up">我说过「不」吗</h3>
+        <p><strong>这个项目里，我没有拒绝过任何需求。</strong>现在回头看，这是我最大的缺失——我把「都做」当成了负责。拒绝一个需求需要三个前提：有人在提、你有权说不、你能承担后果。整册五个项目里，只有 KKH 同时具备这三条——而我完全没用上。</p>
+
+        <div class="quote" style="border-top:1px solid var(--line);padding-top:1.6em;background:none;padding-left:0;padding-right:0;">
+          实习三个月，五个并行方案，三件套交付。<br>
+          <strong>如果再做一次，我会把那次 N=3 测试提前到方案成形之前。</strong>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="kv" data-reveal="up">
+          <div class="row"><div class="k">06 月</div><div class="v">资料研读与两场深访（06/19 管理层 34 分钟、06/23 护士长 54 分钟）。这段时间没有界面。</div></div>
+          <div class="row"><div class="k">07 月上</div><div class="v">五个并行方案成形，A5 晨会卡定为推进方向；三层结构定稿，工具站四视图成形。</div></div>
+          <div class="row"><div class="k">07 月下</div><div class="v">07/17 向院方各部门负责人汇报；之后做工具站四视图、七帧故事板、Resource Guide 与 Checklist。</div></div>
+          <div class="row"><div class="k">08 月上</div><div class="v">写成可点的 HTML，交给院方内部流程。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next" data-reveal="up">
+      <span class="lbl">下一个</span>
+      <a href="eodd.html">02 · EODD 可解释 AI 决策界面 <span>团队研究 · N=16 →</span></a>
+    </div>
+
+    <div class="contact-band" data-reveal="up">
+      <div><span>邮箱</span><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div>
+      <div><span>电话</span><a href="tel:+8617857399362">178-5739-9362</a></div>
+      <div><span>GitHub</span><a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">github.com/YMaTaZ</a></div>
+      <div><span>全册 PDF</span><a href="../assets/portfolio-2026.pdf" target="_blank" rel="noopener">作品集 2026（16 页）</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 袁烨 YUAN YE · 界面内数字为示例值，结构与真实看板一致</span>
+    <span><a href="../index.html">返回作品集</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/motion.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+/* ==============================================================
+   袁烨 · 作品集 2026 —— 动效层
+   用户要求：仿 Apple 官网这类产品页的滚动动效。
+   这一层显式覆盖规则书里「每页仅一个焦点动效」的自我约束，
+   但节奏仍然按规则书来：一条出场曲线、三种位移幅度、不超过 1.2s。
+
+   缓动：--e-out 取 cubic-bezier(.16,1,.3,1)，起步快、尾巴长（Apple 的出场手感）
+   位移：26px（常规）/ 112% 行高（大字）——不做弹簧、不做回弹
+   尊重 prefers-reduced-motion：整套动效归零，站点退化为静态
+   ============================================================== */
+
+:root{
+  --e-out:cubic-bezier(.16,1,.3,1);
+  --e-soft:cubic-bezier(.4,0,.2,1);
+  --t-fast:.24s;
+  --t-base:.62s;
+  --t-slow:1.12s;
+  --head-h:72px;
+}
+
+html{scroll-padding-top:calc(var(--head-h) + 8px);}
+@media (prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth;}
+}
+
+/* ---------------------------------------------------------------
+   1｜出现（reveal）
+   约定：JS 只负责加 .in；没加之前元素不可见、不参与布局抖动。
+   --------------------------------------------------------------- */
+/* 关键：只有 html.js（脚本已启动）时才隐藏待出场元素。
+   脚本没跑起来 = 页面完整可见，不出现白屏。 */
+@media (prefers-reduced-motion:no-preference){
+  html.js [data-reveal]{
+    opacity:0;
+    transition:
+      opacity var(--t-base) var(--e-out),
+      transform var(--t-base) var(--e-out),
+      clip-path var(--t-slow) var(--e-out);
+    transition-delay:var(--d,0ms);
+  }
+  html.js [data-reveal="up"]{transform:translate3d(0,26px,0);}
+  html.js [data-reveal="scale"]{transform:scale(.965);}
+  html.js [data-reveal="mask"]{clip-path:inset(0 0 100% 0);}
+  html.js [data-reveal].in{
+    opacity:1;
+    transform:none;
+    clip-path:inset(0 0 0 0);
+  }
+}
+
+/* ---------------------------------------------------------------
+   2｜首屏：大字逐行升起（Apple 的招牌）
+   只在宽屏做行切分；窄屏退化为普通整块淡入，避免换行被裁。
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion:no-preference) and (min-width:721px){
+  .display .ln{
+    display:block;
+    overflow:hidden;
+    padding-bottom:.06em;
+    margin-bottom:-.06em;
+  }
+  .display .ln > span{
+    display:block;
+    transform:translate3d(0,112%,0);
+    animation:lnRise var(--t-slow) var(--e-out) forwards;
+    animation-delay:calc(var(--d,0ms) + 120ms);
+  }
+  @keyframes lnRise{to{transform:none;}}
+}
+
+/* ---------------------------------------------------------------
+   3｜视差：元素随滚动以不同速率位移（幅度由 data-parallax 决定）
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion:no-preference){
+  [data-parallax]{
+    transform:translate3d(0,var(--py,0px),0);
+    will-change:transform;
+  }
+}
+
+/* ---------------------------------------------------------------
+   4｜顶栏：粘顶 + 毛玻璃 + 滚动后收窄 + 阅读进度
+   --------------------------------------------------------------- */
+.site-head{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:rgba(233,228,218,.78);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);
+  backdrop-filter:saturate(180%) blur(18px);
+  transition:background var(--t-fast) var(--e-soft),
+             border-color var(--t-fast) var(--e-soft);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .site-head{background:rgba(233,228,218,.96);}
+}
+.site-head .wrap{transition:padding var(--t-fast) var(--e-soft);}
+.site-head.is-scrolled .wrap{padding-top:13px;padding-bottom:13px;}
+.site-head.is-scrolled{border-bottom-color:var(--line);}
+
+.readbar{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:2px;
+  z-index:80;
+  background:var(--accent);
+  transform:scaleX(calc(var(--p,0) / 100));
+  transform-origin:0 50%;
+  pointer-events:none;
+}
+
+/* ---------------------------------------------------------------
+   5｜规格条：大数字 + 细线，滚动到这里时数字从 0 数上去
+   --------------------------------------------------------------- */
+.specs{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:clamp(26px,3.4vw,44px) 0;
+}
+.specs-inner{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(18px,2.6vw,32px);
+}
+.stat{min-width:0;}
+.stat .n{
+  display:block;
+  font-family:var(--mono);
+  font-size:clamp(1.9rem,4.4vw,3.1rem);
+  line-height:1.02;
+  font-weight:600;
+  letter-spacing:-.03em;
+  color:var(--ink);
+  font-variant-numeric:tabular-nums;
+}
+.stat .n .u{
+  font-size:.42em;
+  letter-spacing:0;
+  margin-left:.12em;
+  color:var(--soft);
+  font-weight:400;
+}
+.stat .l{
+  display:block;
+  margin-top:.7em;
+  font-size:.78rem;
+  line-height:1.6;
+  color:var(--faint);
+  letter-spacing:.02em;
+}
+
+/* ---------------------------------------------------------------
+   6｜作品列表：整行从左浮起一层底，标题右移，行高不变
+   --------------------------------------------------------------- */
+.work-list a{
+  background-image:linear-gradient(90deg,var(--tint) 0%,rgba(220,213,199,0) 78%);
+  background-repeat:no-repeat;
+  background-position:0 50%;
+  background-size:0% 100%;
+  transition:background-size .52s var(--e-out);
+}
+.work-list a:hover{background-size:100% 100%;}
+.work-list a .w-name,
+.work-list a .w-num{transition:transform .52s var(--e-out),color .3s var(--e-soft);}
+.work-list a:hover .w-num{color:var(--accent);}
+@media (prefers-reduced-motion:no-preference){
+  .work-list a:hover .w-name{transform:translate3d(8px,0,0);}
+  .work-list a:hover .w-num{transform:translate3d(4px,0,0);}
+}
+
+/* ---------------------------------------------------------------
+   7｜能力链：钉住一屏，滚动时四段依次点亮
+   （data-pin 由 JS 读取进度，--step 0→3）
+   --------------------------------------------------------------- */
+.pin{
+  position:relative;
+  height:190vh;
+}
+.pin-stage{
+  position:sticky;
+  top:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.pin-stage > .wrap{width:100%;}
+
+.pin .chain{
+  border-top:1px solid var(--line);
+  padding-top:clamp(20px,3vw,32px);
+}
+.pin .chain > div{
+  position:relative;
+  transition:opacity var(--t-base) var(--e-out);
+}
+.pin .chain > div::before{
+  content:"";
+  position:absolute;
+  top:calc(-1 * clamp(20px,3vw,32px) - 1px);
+  left:0;right:0;
+  height:2px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:0 50%;
+  transition:transform .7s var(--e-out);
+}
+.pin .chain > div.on::before{transform:scaleX(1);}
+
+@media (prefers-reduced-motion:no-preference){
+  .pin-ready .pin .chain > div{opacity:.32;}
+  .pin-ready .pin .chain > div.on{opacity:1;}
+  .pin .chain > div{transition:opacity .55s var(--e-out);}
+}
+.pin-hint{
+  margin-top:clamp(22px,3vw,34px);
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.14em;
+  color:var(--faint);
+  text-transform:uppercase;
+}
+
+/* 窄屏 / 减动效：取消钉住，回到普通长列表 */
+@media (max-width:900px){
+  .pin{height:auto;}
+  .pin-stage{position:static;min-height:0;padding:clamp(8px,3vw,24px) 0 0;}
+  .pin .chain > div::before{display:none;}
+  .pin-hint{display:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  .pin{height:auto;}
+  .pin-stage{position:static;min-height:0;}
+  .pin .chain > div{opacity:1 !important;}
+  .pin .chain > div::before{display:none;}
+  .pin-hint{display:none;}
+}
+
+/* ---------------------------------------------------------------
+   8｜按钮与卡片：抬 1px + 描边收紧，不做缩放
+   --------------------------------------------------------------- */
+.btn{transition:background var(--t-fast) var(--e-soft),
+                   color var(--t-fast) var(--e-soft),
+                   border-color var(--t-fast) var(--e-soft),
+                   transform .4s var(--e-out),
+                   box-shadow .4s var(--e-out);}
+@media (prefers-reduced-motion:no-preference){
+  .btn:hover{transform:translate3d(0,-1px,0);box-shadow:0 6px 18px -10px rgba(26,43,60,.5);}
+  .btn:active{transform:translate3d(0,0,0);box-shadow:none;}
+  .btn:hover .ar{transform:translate3d(3px,0,0);}
+}
+.btn .ar{display:inline-block;transition:transform .4s var(--e-out);}
+
+.next a{transition:color var(--t-fast) var(--e-soft),transform .5s var(--e-out);}
+@media (prefers-reduced-motion:no-preference){
+  .next a:hover{transform:translate3d(6px,0,0);}
+}
+
+/* 图：进视口时轻微起浮，不留裁切 */
+.fig img,.fig-pair img,.fig-band img,.fig-grid img,.screens img{
+  transition:transform .8s var(--e-out),box-shadow .5s var(--e-soft);
+}
+@media (prefers-reduced-motion:no-preference){
+  .fig img:hover,.fig-pair img:hover,.fig-grid img:hover,.screens img:hover{
+    transform:translate3d(0,-2px,0);
+    box-shadow:0 14px 34px -22px rgba(26,43,60,.55);
+  }
+}
+
+/* ---------------------------------------------------------------
+   9｜案例页：标题遮罩揭示 + 元信息逐条
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion:no-preference){
+  /* 只在「还没出场」时下移裁切；一旦 .in 就是普通可见状态。
+     不要写 .case-title[data-reveal]{clip-path:...108%} 这种常驻规则——
+     它的优先级会盖住 html.js [data-reveal].in 的复位，标题会永久消失。 */
+  html.js .case-title[data-reveal]:not(.in){clip-path:inset(0 0 108% 0);}
+  .case-claim{transition-delay:var(--d,140ms);}
+}
+
+/* ---------------------------------------------------------------
+   10｜锚点跳转时给被定位的章节一次轻微高亮（可感知，不闪烁）
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion:no-preference){
+  .sec.flash .sec-head{animation:flashIn var(--t-slow) var(--e-out);}
+  @keyframes flashIn{
+    from{opacity:.35;transform:translate3d(0,10px,0);}
+    to{opacity:1;transform:none;}
+  }
+}
+
+/* ---------------------------------------------------------------
+   11｜全局降级
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  [data-reveal]{opacity:1 !important;transform:none !important;clip-path:none !important;transition:none !important;}
+  .readbar{display:none;}
+}
+
+/* 打印：动效一律不参与 */
+@media print{
+  .readbar,.pin-hint{display:none;}
+  [data-reveal]{opacity:1 !important;transform:none !important;clip-path:none !important;}
+  .pin{height:auto;}
+  .pin-stage{position:static;min-height:0;}
+}

@@ -1,66 +1,69 @@
-# Portfolio · 个人作品集
+# 袁烨 · 作品集 2026
 
-AI product / UX / design portfolio — a static, dependency-free site.
-AI 产品 / UX / 设计方向的作品集 —— 纯静态、零依赖站点。
+交互设计师（B 端）· 复杂信息架构与多角色界面 · 从研究到前端实现独立跑通。
 
-**Live · 在线访问**：https://ymataz.github.io/
+线上地址：<https://ymataz.github.io/>
 
----
+## 这本册子在讲什么
 
-## Pages · 页面
+五个项目，按「最像工作」到「最像作业」排。每个项目先给背景、约束、我的角色，再给判断页——写的是「我以为 → 实际是 → 所以我改了 → 代价」。
 
-| Page · 页面 | Path | Note · 说明 |
+| 页 | 项目 | 性质 |
 |---|---|---|
-| Home · 首页 | `/` | Warm-paper landing · 暖纸风门面 |
-| EODD · Explainable AI Decision System | `/eodd.html` | Case study · 案例研究 |
-| KKH PREMs Translation Toolkit | `/kkh.html` | Case study · 案例研究 |
-| EODD Data Visualization | `/eodd-data-viz.html` | Pixel-art charts · 像素风图表 |
+| `work/kkh.html` | KKH 妇女儿童医院 · 多指标患者体验看板 | 真实机构实习 · 工具站与方案独立完成 |
+| `work/eodd.html` | EODD · 可解释 AI 决策界面 | 团队研究 · 实证环节由我承担 |
+| `work/minimal-design.html` | minimal-design · 前端设计规则书 | 个人项目 · MIT 开源 |
+| `work/digest.html` | AI 开源日报 · 端到端自动化 | 个人项目 · MIT 开源 |
+| `work/chair.html` | 人宠共处公共座椅 · 形态概念 | 课程项目 · 小组 |
 
----
+另有 16 页 A4 横版全册 PDF：`assets/portfolio-2026.pdf`（两版简历也在 `assets/`）。
 
-## Stack · 技术
+## 技术
 
-- **Plain HTML / CSS / JavaScript** — no framework, no build step.
-  纯 HTML / CSS / JavaScript，无框架、无构建步骤。
-- **Self-hosted fonts** — Newsreader, Inter, Noto Serif SC, Press Start 2P, Fusion Pixel (all OFL-licensed).
-  字体自托管，均为 OFL 开源许可。
-- **Motion** — CSS transitions plus light vanilla JS; respects `prefers-reduced-motion`.
-  动效为 CSS 过渡加少量原生 JS，遵循 `prefers-reduced-motion`。
-- **Accessibility** — semantic landmarks, skip-link, keyboard focus rings, 44px hit areas.
-  可访问性：语义 landmark、skip-link、键盘焦点环、44px 命中区。
+手写 HTML + CSS + 一个无依赖的 JS 文件，没有框架、没有构建步骤、没有追踪脚本。
 
----
+- 手写 HTML/CSS，无框架、无构建、无依赖
+- 图片为 WebP，全部 `loading="lazy"`
+- 响应式断点 1000px / 720px，移动端无横向溢出
+- 遵循本站自建的 minimal-design 规则：每屏 ≤5 色、主色唯一、正文对比 ≥4.5:1、字重只用 400/600、标题上方不加 eyebrow、等分只用 12 栏
+- 底色是暖纸 `#E9E4DA`（不是白底）。四档灰字全部重算过对比度：ink 11.4:1 / soft 6.8:1 / faint 5.4:1 / accent 5.8:1；连浅色底块 `--tint #DCD5C7` 上也全部 ≥4.7:1
 
-## Structure · 目录结构
+字重说明：规则书原文写 400/500，本站改用 400/600——Windows 的微软雅黑没有 500 字面，500 会回落到 Regular，标题与正文将失去层级；600 在 macOS 与 Windows 两端都能落到真实 Bold。
 
-```
-├─ index.html              Home · 首页
-├─ eodd.html               EODD case · 案例
-├─ kkh.html                KKH case · 案例
-├─ eodd-data-viz.html      EODD data viz · 数据可视化
-└─ assets/
-   ├─ case.css             Case styles · 案例页样式
-   ├─ index.css            Home styles · 首页样式
-   ├─ case.js / index.js   Scripts · 脚本
-   ├─ fonts/               Self-hosted fonts · 自托管字体
-   ├─ EODD_Design_Science_Paper.pdf
-   ├─ kkh-storyboard/      Process images · 过程图
-   └─ ui-shots/            UI screenshots · 界面截图
-```
+## 动效
 
----
+`assets/css/motion.css` + `assets/js/motion.js`，约 600 行，无第三方库。
 
-## Local preview · 本地预览
+这一层**显式覆盖**规则书里「每页仅一个焦点动效」的自我约束——用户要求做成产品官网那种滚动体验。代价是规则书那句话在本站不成立，所以在这里写清楚。
 
-Any static server works · 任何静态服务器即可：
+- **一条曲线**：`cubic-bezier(.16,1,.3,1)`，起步快、尾巴长；不做弹簧、不做回弹
+- **三种出场**：`up`（26px 上浮）/ `scale`（.965 起）/ `mask`（自下揭开），由 `data-reveal` 指定
+- **大字逐行升起**：首屏标题按视觉行切开，每行 112% 行高上移，逐行 90ms 错开
+- **钉住能力链**：首页「四段链」在 190vh 的滚动区间里 sticky 停住，四段依次点亮
+- **规格条计数**：48 / 5 / 3 / d=1.81 滚动到视口时从 0 数上来
+- **粘顶毛玻璃**：顶栏 `backdrop-filter: saturate(180%) blur(18px)`，滚动后收窄；不支持时降级为不透明
+- **阅读进度**：顶部 2px 主色条，按整页进度 `scaleX`
+- **案例页**：标题自下揭开，各区块依次上浮
 
-```
+三条实现约束（都是踩过的坑）：
+
+1. **内容默认可见**。只有在 `<html class="js">` 存在时，CSS 才隐藏待出场元素——脚本没跑起来时页面完整可读，不白屏。
+2. **不用 IntersectionObserver**。全站只有一个 rAF 循环，按 `getBoundingClientRect` 判定，滚动与 resize 只是重排一次；截图工具与无头浏览器里行为一致。
+3. **`prefers-reduced-motion: reduce` 一次性关掉全部动效**，钉住段退化回普通长列表，进度条隐藏。
+
+出场判定用的是「顶边是否进过视口」，不是「是否还在视口内」——否则快速滚动或带 `#hash` 落地时，被跳过的元素会永久停在透明状态。滚到底时再无条件放行一次，兜住贴着页脚的几块。
+
+## 本地跑
+
+```bash
 python -m http.server 8000
+# 打开 http://127.0.0.1:8000/
 ```
+
+## 口径
+
+KKH 一律写「交付后进入院方内部对接流程」，不写已落地 / 已采纳 / 临床使用；KKH 的时间写 2026.05.21 — 08.20 实习三个月（Offer Letter 为证），访谈写两场深访（管理层 34 分钟、护士长 54 分钟，相隔四天，无医生），原型写五个并行方案（A5 是纸张尺寸不是版本号），Resource Guide 与 Checklist 标注「团队共同完成」。EODD 写「团队项目，实证环节由我承担」「投稿状态待确认」，不写「独立实现」；界面内数字为示例值，结构与真实看板一致。
 
 ---
 
-## License · 许可
-
-Site content © 2026. Fonts under their own open licenses (see `assets/fonts/`).
-页面内容 © 2026。字体各自遵循其开源许可（见 `assets/fonts/`）。
+© 2026 袁烨 YUAN YE · Yachin.HCD@outlook.com
