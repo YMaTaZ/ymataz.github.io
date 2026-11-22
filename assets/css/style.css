@@ -27,8 +27,8 @@
 
   --col:12;
   --gap:24px;
-  --page:1240px;
-  --gutter:clamp(20px,5vw,64px);
+  --page:1180px;
+  --gutter:clamp(24px,5.5vw,72px);
 
   --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"SF Mono","JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -42,7 +42,7 @@ body{
   color:var(--ink);
   font-family:var(--font);
   font-size:16px;
-  line-height:1.85;
+  line-height:2.0;
   font-weight:400;
   letter-spacing:.01em;
   -webkit-font-smoothing:antialiased;
@@ -124,7 +124,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* ---------- 首页 hero ---------- */
 .hero{
-  padding:clamp(56px,9vw,120px) 0 clamp(40px,5vw,72px);
+  padding:clamp(56px,9vw,120px) 0 clamp(48px,6vw,88px);
 }
 .hero-meta{
   margin:0 0 clamp(24px,4vw,40px);
@@ -152,11 +152,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 }
 .hero-copy{grid-column:1 / span 5;}
 .hero-copy p{
-  margin:0 0 1.1em;
+  margin:0 0 1.55em;
   font-size:1.02rem;
-  line-height:1.9;
+  line-height:2.0;
   color:var(--soft);
-  max-width:34em;
+  max-width:30em;
 }
 .hero-body p:first-child{color:var(--ink);}
 .hero-actions{
@@ -214,7 +214,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* ---------- 章节头：编号走左轨，不在标题上方加 eyebrow ---------- */
 .sec{
-  padding:clamp(48px,7vw,96px) 0;
+  padding:clamp(64px,9vw,124px) 0;
   border-top:1px solid var(--line2);
 }
 .sec-head{
@@ -222,7 +222,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   grid-template-columns:64px minmax(0,1fr);
   gap:0 var(--gap);
   align-items:baseline;
-  margin-bottom:clamp(28px,4vw,48px);
+  margin-bottom:clamp(36px,5vw,64px);
 }
 .sec-num{
   font-family:var(--mono);
@@ -240,8 +240,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   max-width:26em;
 }
 .sec-sub{
-  margin:.7em 0 0;
+  margin:.9em 0 0;
   font-size:.95rem;
+  line-height:1.95;
   color:var(--soft);
   max-width:32em;
 }
@@ -258,7 +259,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   display:grid;
   grid-template-columns:64px minmax(0,7.2fr) minmax(0,4.8fr);
   gap:0 var(--gap);
-  padding:clamp(20px,2.6vw,30px) 0;
+  padding:clamp(30px,3.6vw,44px) 0;
   align-items:baseline;
   transition:opacity .2s ease;
 }
@@ -277,11 +278,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 }
 .w-line{
   display:block;
-  margin-top:.45em;
+  margin-top:.6em;
   font-size:.9rem;
   color:var(--soft);
-  line-height:1.7;
-  max-width:30em;
+  line-height:1.85;
+  max-width:29em;
 }
 .w-meta{
   display:block;
@@ -320,12 +321,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .chain p{
   margin:0;
   font-size:.85rem;
-  line-height:1.75;
+  line-height:1.9;
   color:var(--soft);
 }
 .chain .ev{
   display:block;
-  margin-top:.8em;
+  margin-top:1.1em;
   font-family:var(--mono);
   font-size:.72rem;
   color:var(--faint);
@@ -342,12 +343,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .about-side{grid-column:9 / span 4;}
 .prose{
   font-size:1rem;
-  line-height:1.9;
+  line-height:2.0;
   color:var(--soft);
-  max-width:34em;
+  max-width:30em;
 }
 .prose strong{color:var(--ink);font-weight:600;}
-.prose p{margin:0 0 1.1em;}
+.prose p{margin:0 0 1.7em;}
 
 /* 键值行 */
 .kv{
@@ -357,10 +358,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   display:grid;
   grid-template-columns:7.4em minmax(0,1fr);
   gap:16px;
-  padding:.72em 0;
+  padding:1.08em 0;
   border-bottom:1px solid var(--line2);
   font-size:.86rem;
-  line-height:1.7;
+  line-height:1.8;
 }
 .dim{color:var(--faint);}
 .kv .k{color:var(--faint);letter-spacing:.04em;}
@@ -389,7 +390,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
    案例页
    ============================================================== */
 .case-head{
-  padding:clamp(40px,6vw,80px) 0 clamp(28px,4vw,44px);
+  padding:clamp(40px,6vw,80px) 0 clamp(44px,5.5vw,68px);
 }
 .breadcrumb{
   font-size:.76rem;
@@ -407,9 +408,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   max-width:24ch;
 }
 .case-claim{
-  margin:clamp(18px,2.4vw,26px) 0 0;
+  margin:clamp(22px,3vw,34px) 0 0;
   font-size:clamp(1.06rem,2vw,1.34rem);
-  line-height:1.65;
+  line-height:1.75;
   color:var(--accent);
   max-width:30em;
   font-weight:400;
@@ -420,10 +421,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:0 var(--gap);
-  padding-top:16px;
+  padding-top:24px;
 }
 .case-meta div{
-  padding-top:8px;
+  padding-top:10px;
 }
 .case-meta dt{
   font-size:.72rem;
@@ -434,12 +435,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .case-meta dd{
   margin:0;
   font-size:.88rem;
-  line-height:1.6;
+  line-height:1.8;
 }
 
 /* 案例正文分节 */
 .case-sec{
-  padding:clamp(40px,6vw,76px) 0;
+  padding:clamp(56px,8vw,104px) 0;
   border-top:1px solid var(--line2);
 }
 .case-sec > .grid{
@@ -460,46 +461,46 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .col-side{grid-column:9 / span 4;}
 
 .case-sec h2{
-  margin:0 0 .7em;
+  margin:0 0 .85em;
   font-size:clamp(1.24rem,2.4vw,1.72rem);
   line-height:1.4;
   font-weight:600;
   letter-spacing:-.01em;
 }
 .case-sec h3{
-  margin:1.9em 0 .5em;
+  margin:2.2em 0 .7em;
   font-size:1rem;
   font-weight:600;
   letter-spacing:.01em;
 }
 .case-sec p{
-  margin:0 0 1.05em;
+  margin:0 0 1.7em;
   font-size:.99rem;
-  line-height:1.9;
+  line-height:2.05;
   color:var(--soft);
-  max-width:34em;
+  max-width:30em;
 }
 .case-sec p strong{color:var(--ink);font-weight:600;}
-.case-sec ul{margin:0 0 1.1em;padding-left:1.1em;max-width:34em;}
+.case-sec ul{margin:0 0 1.7em;padding-left:1.15em;max-width:29em;}
 .case-sec li{
-  margin-bottom:.6em;
+  margin-bottom:.95em;
   font-size:.96rem;
-  line-height:1.85;
+  line-height:2.0;
   color:var(--soft);
 }
 .case-sec li strong{color:var(--ink);font-weight:600;}
 .quote{
-  margin:clamp(24px,3.4vw,40px) 0;
-  padding:clamp(18px,2.4vw,26px) clamp(20px,2.6vw,30px);
+  margin:clamp(32px,4.4vw,52px) 0;
+  padding:clamp(26px,3.2vw,40px) clamp(26px,3.4vw,44px);
   background:var(--tint);
   font-size:1rem;
-  line-height:1.85;
+  line-height:1.95;
   color:var(--ink);
-  max-width:34em;
+  max-width:30em;
 }
 .quote cite{
   display:block;
-  margin-top:.8em;
+  margin-top:1.1em;
   font-style:normal;
   font-size:.78rem;
   letter-spacing:.04em;
@@ -509,25 +510,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 /* 判断卡：我以为 / 实际是 / 所以我改了 / 代价 */
 .dec{
   border-top:1px solid var(--line);
-  margin:0 0 1.6em;
-  max-width:36em;
+  margin:0 0 2.2em;
+  max-width:32em;
 }
 .dec .row{
   display:grid;
   grid-template-columns:6.4em minmax(0,1fr);
-  gap:16px;
-  padding:.78em 0;
+  gap:18px;
+  padding:1.12em 0;
   border-bottom:1px solid var(--line2);
   font-size:.92rem;
-  line-height:1.8;
+  line-height:1.9;
 }
 .dec .k{color:var(--faint);font-size:.8rem;letter-spacing:.06em;padding-top:.15em;}
-.dec .v{color:var(--soft);}
+.dec .v{color:var(--soft);line-height:1.85;}
 .dec .v b{color:var(--ink);font-weight:600;}
 .dec .row.turn .v{color:var(--ink);font-weight:600;}
 
 /* 图 */
-.fig{margin:clamp(24px,3.4vw,40px) 0;max-width:100%;}
+.fig{margin:clamp(32px,4.6vw,56px) 0;max-width:100%;}
 .fig img{
   width:100%;
   border:1px solid var(--line);
@@ -535,7 +536,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   box-shadow:0 1px 2px rgba(26,43,60,.04),0 12px 30px -24px rgba(26,43,60,.42);
 }
 .fig figcaption{
-  margin-top:.8em;
+  margin-top:1.05em;
   font-size:.78rem;
   line-height:1.7;
   color:var(--faint);
@@ -543,9 +544,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 }
 .fig-grid{
   display:grid;
-  gap:14px;
+  gap:16px;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  margin:clamp(20px,3vw,32px) 0;
+  margin:clamp(32px,5vw,56px) 0;
 }
 .fig-grid img{border:1px solid var(--line2);}
 .fig-grid .cap{
@@ -574,8 +575,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .screens{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:var(--gap);
-  margin:clamp(24px,3.4vw,40px) 0;
+  gap:calc(var(--gap) + 4px);
+  margin:clamp(32px,5vw,56px) 0;
 }
 .screens figure{margin:0;}
 .screens img{
@@ -587,7 +588,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   background:var(--tint);
 }
 .screens figcaption{
-  margin-top:.7em;
+  margin-top:.95em;
   font-size:.82rem;
   line-height:1.65;
   color:var(--soft);
@@ -602,8 +603,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 /* 数字块 */
 .num-block{
   border-top:1px solid var(--line);
-  padding-top:clamp(16px,2vw,24px);
-  margin:clamp(20px,3vw,32px) 0;
+  padding-top:clamp(18px,2.4vw,28px);
+  margin:clamp(32px,4.6vw,52px) 0;
 }
 .num-block .big{
   font-size:clamp(2.4rem,5vw,3.6rem);
@@ -624,7 +625,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 table.t{
   width:100%;
   border-collapse:collapse;
-  margin:clamp(20px,3vw,32px) 0;
+  margin:clamp(30px,4.4vw,52px) 0;
   font-size:.88rem;
 }
 table.t th{
@@ -633,14 +634,14 @@ table.t th{
   font-size:.74rem;
   letter-spacing:.08em;
   color:var(--faint);
-  padding:0 12px .7em 0;
+  padding:0 14px .9em 0;
   border-bottom:1px solid var(--line);
 }
 table.t td{
-  padding:.72em 12px .72em 0;
+  padding:.98em 14px .98em 0;
   border-bottom:1px solid var(--line2);
   vertical-align:top;
-  line-height:1.7;
+  line-height:1.8;
   color:var(--soft);
 }
 table.t td:first-child{color:var(--ink);font-weight:600;white-space:nowrap;}
@@ -649,8 +650,8 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
 /* 下一步 */
 .next{
   border-top:1px solid var(--line);
-  margin-top:clamp(40px,6vw,80px);
-  padding-top:clamp(20px,3vw,32px);
+  margin-top:clamp(56px,7vw,96px);
+  padding-top:clamp(26px,3.4vw,40px);
 }
 .next .lbl{font-size:.74rem;letter-spacing:.1em;color:var(--faint);}
 .next a{
@@ -669,13 +670,14 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
 
 /* 页脚联系 */
 .contact-band{
-  margin-top:clamp(40px,6vw,72px);
+  margin-top:clamp(48px,6.5vw,84px);
   border-top:1px solid var(--line);
-  padding-top:clamp(20px,3vw,28px);
+  padding-top:clamp(24px,3.4vw,34px);
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:16px var(--gap);
+  gap:22px var(--gap);
   font-size:.84rem;
+  line-height:1.85;
 }
 .contact-band div span{
   display:block;
@@ -687,6 +689,88 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
 .contact-band a:hover{color:var(--accent);}
 
 /* ==============================================================
+   段落分组：把原本紧贴在一起的三四块内容分组，
+   每组之间给一段真正的空白（只在 HTML 里加包裹，不加文字）
+   ============================================================== */
+/* 标题两端对齐换行：避免中文标题最后一行只落一个字（Chrome 114+ 支持，
+   不支持的浏览器忽略这一行，行为与原来一致） */
+.case-title,.case-sec h2,.sec h2,.display,.sec-sub{text-wrap:balance;}
+
+/* 段落孤行控制：避免最后一行只剩一个单词（英文最常见）。Chrome 117+ 支持
+   text-wrap:pretty，旧浏览器忽略此行，行为与原来一致。 */
+.case-sec p,.case-sec li,.prose p,.hero-copy p,.case-claim,.lede,.sec-sub{text-wrap:pretty;}
+
+.sub-block{max-width:100%;}
+.sub-block + .sub-block{margin-top:clamp(44px,5.2vw,76px);}
+.sub-block > h2:first-child,
+.sub-block > h3:first-child{margin-top:0;}
+.sub-block > p:last-child,
+.sub-block > ul:last-child,
+.sub-block > .dec:last-child,
+.sub-block > .quote:last-child,
+.sub-block > table.t:last-child{margin-bottom:0;}
+/* 图带 / 目录条这类整块内容：上方再加一条细线与留白 */
+.sub-band{border-top:1px solid var(--line2);padding-top:clamp(34px,4.6vw,58px);}
+.sub-block + .sub-band{margin-top:clamp(52px,6vw,84px);}
+
+/* ==============================================================
+   英文专属覆盖：拉丁字母 x-height 小，需要更小行距、略大字号、
+   更窄的行宽（62ch 以内）。中文的 2.0 行距不能照搬给英文。
+   ============================================================== */
+html[lang="en"] body{line-height:1.9;}
+html[lang="en"] .case-sec p,
+html[lang="en"] .prose,
+html[lang="en"] .prose p,
+html[lang="en"] .hero-copy p{
+  font-size:1.02rem;
+  line-height:1.9;
+  max-width:62ch;
+}
+/* 英文首页 hero 正文原来占 5 栏（≈430px），62ch 被栏宽压成 50 字/行，
+   会出现单词独占一行。英文放到 6 栏，行宽回到 ~60 字。 */
+html[lang="en"] .hero-copy{grid-column:1 / span 6;}
+html[lang="en"] .hero-actions{grid-column:8 / span 5;}
+html[lang="en"] .case-sec p{margin:0 0 1.4em;}
+html[lang="en"] .prose p{margin:0 0 1.45em;}
+html[lang="en"] .hero-copy p{margin:0 0 1.3em;}
+html[lang="en"] .case-sec li{
+  font-size:1rem;
+  line-height:1.88;
+  margin-bottom:.8em;
+  max-width:62ch;
+}
+html[lang="en"] .case-sec ul{max-width:62ch;margin-bottom:1.5em;padding-left:1.2em;}
+html[lang="en"] .case-sec h2{font-size:clamp(1.3rem,2.5vw,1.8rem);line-height:1.35;}
+html[lang="en"] .sec h2{line-height:1.35;}
+html[lang="en"] .case-claim{font-size:clamp(1.1rem,2.1vw,1.4rem);line-height:1.7;max-width:52ch;}
+html[lang="en"] .case-title{line-height:1.15;}
+html[lang="en"] .quote{font-size:1.04rem;line-height:1.85;max-width:58ch;}
+html[lang="en"] .dec{max-width:58ch;}
+html[lang="en"] .dec .row{line-height:1.8;}
+html[lang="en"] .sec-sub{max-width:54ch;line-height:1.85;}
+html[lang="en"] .w-line{max-width:54ch;line-height:1.8;}
+/* 英文首页「关于」那段原来跨 7 栏（594px ≈ 74 字/行）。62ch 在这里不生效，
+   所以英文版把正文收到 6 栏、把 kv 侧栏放宽到 5 栏：行宽回到 ~63 字，
+   英文标签也不用挤在 7.4em 里。中文版不动。 */
+html[lang="en"] .about-main{grid-column:1 / span 6;}
+html[lang="en"] .about-side{grid-column:8 / span 5;}
+@media (max-width:1000px){
+  html[lang="en"] .about-main{grid-column:1 / span 12;}
+  html[lang="en"] .about-side{grid-column:1 / span 12;}
+}
+@media (max-width:768px){
+  html[lang="en"] .case-sec p,
+  html[lang="en"] .prose,
+  html[lang="en"] .prose p,
+  html[lang="en"] .hero-copy p,
+  html[lang="en"] .case-sec li,
+  html[lang="en"] .case-sec ul{max-width:100%;}
+  html[lang="en"] body{line-height:1.82;}
+}
+html[lang="en"] .chain p{line-height:1.8;}
+html[lang="en"] .kv .row{line-height:1.75;}
+
+/* ==============================================================
    响应式
    ============================================================== */
 
@@ -696,12 +780,12 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
 .guide-strip{
   display:grid;
   grid-template-columns:repeat(7,minmax(0,1fr));
-  gap:10px;
-  margin-top:14px;
+  gap:12px;
+  margin-top:clamp(18px,2.4vw,26px);
 }
 .guide-strip figure{margin:0;}
 .guide-strip img{width:100%;display:block;border:1px solid var(--line2);}
-.guide-strip figcaption{margin-top:.5em;font-size:.72rem;line-height:1.6;font-weight:600;}
+.guide-strip figcaption{margin-top:.7em;font-size:.72rem;line-height:1.7;font-weight:600;}
 .guide-strip figcaption span{font-weight:400;color:var(--faint);}
 @media (max-width:720px){
   .guide-strip{grid-template-columns:repeat(3,minmax(0,1fr));}
@@ -751,7 +835,7 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
    结构对照图（EODD 页用）：两套系统同样宽度、同样层级
    ============================================================== */
 .dg{margin:clamp(20px,3vw,32px) 0;}
-.dg .row{display:flex;align-items:stretch;margin-bottom:9px;}
+.dg .row{display:flex;align-items:stretch;margin-bottom:12px;}
 .dg .bx{
   flex:1;
   border:1px solid rgba(44,90,124,.34);
@@ -775,9 +859,9 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
   margin-bottom:.6em;
 }
 .dg .say{
-  font-size:.82rem;line-height:1.7;color:var(--soft);
+  font-size:.82rem;line-height:1.85;color:var(--soft);
   border-left:2px solid var(--line);
-  padding-left:12px;margin:12px 0 26px;
+  padding-left:14px;margin:16px 0 32px;
 }
 .dg .say i{font-style:normal;color:var(--faint);}
 .tracebar{
@@ -789,12 +873,12 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
 }
 .fields{
   display:grid;grid-template-columns:1fr 1fr;gap:0 var(--gap);
-  margin:clamp(20px,3vw,30px) 0;
+  margin:clamp(26px,3.8vw,44px) 0;
 }
-.field{border-top:1px solid var(--line);padding-top:.8em;margin-bottom:1.4em;}
+.field{border-top:1px solid var(--line);padding-top:.9em;margin-bottom:1.9em;}
 .field .tag{display:block;font-family:var(--mono);font-size:.72rem;color:var(--faint);letter-spacing:.08em;margin-bottom:.3em;}
 .field .nm{display:block;font-size:.9rem;font-weight:600;margin-bottom:.3em;}
-.field .ds{display:block;font-size:.82rem;line-height:1.65;color:var(--soft);}
+.field .ds{display:block;font-size:.82rem;line-height:1.8;color:var(--soft);}
 @media (max-width:720px){
   .dg .row{flex-wrap:nowrap;}
   .dg .bx{padding:9px;}
@@ -803,22 +887,22 @@ table.t td.n{font-family:var(--mono);color:var(--ink);}
 }
 
 /* ---------- 案例页图带 ---------- */
-.fig-band{margin-top:clamp(24px,4vw,44px);}
+.fig-band{margin-top:clamp(32px,5vw,56px);}
 .fig-pair{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:var(--gap);
-  margin-top:clamp(24px,4vw,44px);
+  gap:calc(var(--gap) + 4px);
+  margin-top:clamp(32px,5vw,56px);
 }
 .fig-pair figure{margin:0;}
 .fig-pair img{border:1px solid var(--line2);}
 .fig-pair figcaption{
-  margin-top:.7em;font-size:.78rem;line-height:1.7;color:var(--faint);
+  margin-top:.95em;font-size:.78rem;line-height:1.7;color:var(--faint);
 }
 .fig-band figure{margin:0;}
 .fig-band img{width:100%;border:1px solid var(--line2);}
 .fig-band figcaption{
-  margin-top:.8em;font-size:.78rem;line-height:1.7;color:var(--faint);max-width:52em;
+  margin-top:1.05em;font-size:.78rem;line-height:1.7;color:var(--faint);max-width:52em;
 }
 @media (max-width:720px){
   .fig-pair{grid-template-columns:1fr;}

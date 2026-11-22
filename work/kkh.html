@@ -62,10 +62,14 @@
       <div class="rail" data-reveal="up"><span class="n">01</span>背景 · 约束</div>
 
       <div class="col-main">
+        <div class="sub-block">
         <h2 data-reveal="up">问题不在采集，在读</h2>
         <p>患者报告体验测量（PREMs）每周回收一批问卷，汇总成指标。数据一直都有，问题是没有人在读——一线真实的工作流是纸：晨会上摊开的是一张打印表，不是屏幕。</p>
         <p>我要做的不是再做一个更好的报表，是<strong>让这批数据在 5 分钟内变成「今天先做什么」</strong>。</p>
 
+        </div>
+
+        <div class="sub-block">
         <h3 data-reveal="up">四条约束（都不是我定的）</h3>
         <ul>
           <li><strong>两种视角要的不同。</strong>管理层看趋势与驱动因素，护士长看这一班先盯哪两件事——同一批数字，两种读法。</li>
@@ -74,8 +78,12 @@
           <li><strong>拿不到个体数据。</strong>只有操作层聚合值，任何单个患者的记录都看不到。</li>
         </ul>
 
+        </div>
+
+        <div class="sub-block">
         <h3 data-reveal="up">我的角色</h3>
         <p>研究（两场一对一深访：管理层 34 分钟、护士长 54 分钟，相隔四天）、架构（把多指标收敛成一条动线）、界面（四视图工具站 + 八页指南）、实现（零框架单文件前端）。<strong>工具站、故事板与五个方案由我独立完成</strong>；Resource Guide 与 Checklist 与四人团队共同完成；院方负责需求确认与合规评审。</p>
+        </div>
       </div>
 
       <div class="col-side">
@@ -189,6 +197,7 @@
     <div class="wrap grid">
       <div class="rail" data-reveal="up"><span class="n">04</span>界面 · 八页指南</div>
       <div class="col-wide">
+        <div class="sub-block">
         <h2 data-reveal="up">我没有重做看板，我做的是翻译层</h2>
         <p>看板是院方既有的系统，动它等于动他们的考核口径——院方明确说过不要改。所以这次交付的是外面那一层：把「这一屏该怎么读、读完做什么」写成八页，任何科室都能照着用。</p>
 
@@ -207,8 +216,10 @@
           </figure>
         </div>
 
-        <div data-reveal="up" style="margin:clamp(22px,3vw,34px) 0 0;">
-          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:16px;">
+        </div>
+
+        <div class="sub-block sub-band" data-reveal="up">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;">
             <div class="eyebrow" style="margin:0;">八页的目录 · 从设口径到能打印</div>
             <div style="font-size:.78rem; color:var(--faint);">每一页只回答一个问题；最后一页才让读者动手</div>
           </div>
@@ -221,10 +232,11 @@
             <figure style="margin:0;"><img src="../assets/img/guide/rg6-ipa.jpg" alt="指南第 6 页：重要度 × 表现四象限。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">6 定位<br><span style="color:var(--faint);">重要 × 表现</span></figcaption></figure>
             <figure style="margin:0;"><img src="../assets/img/guide/rg7-checklist.jpg" alt="指南第 7 页：能打印的四步清单。" loading="lazy" style="width:100%;border:1px solid var(--line2);"><figcaption style="margin-top:.5em;font-size:.72rem;line-height:1.6;">7 清单<br><span style="color:var(--faint);">能打印的四步</span></figcaption></figure>
           </div>
-          <p style="margin:14px 0 0; font-size:.8rem; color:var(--faint);">八页指南与四步清单为四人团队共同完成；我的部分见下一节的角色行。</p>
+          <p style="margin:18px 0 0; font-size:.8rem; color:var(--faint);">八页指南与四步清单为四人团队共同完成；我的部分见下一节的角色行。</p>
         </div>
 
-        <figure class="fig" data-reveal="up" style="margin-top:clamp(20px,3vw,32px);">
+        <div class="sub-block sub-band">
+        <figure class="fig" data-reveal="up" style="margin-top:0;">
           <img src="../assets/img/meeting.jpg" alt="2026 年 7 月 17 日院方看板会议现场：两台笔记本打开 PREMs 看板，桌上摊着资料。" loading="lazy">
           <figcaption>2026.07.17，在院方 PREMs 看板会议上向各部门负责人汇报。照片只保留屏幕与桌面，不出现与会人员。</figcaption>
         </figure>
@@ -238,6 +250,7 @@
             <tr><td>Act</td><td>今天这一班，谁在什么时候做什么。</td><td>不是按钮，是四个带责任人和时间的格子。</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   </section>
@@ -369,7 +382,7 @@
       <div><span>邮箱</span><a href="mailto:Yachin.HCD@outlook.com">Yachin.HCD@outlook.com</a></div>
       <div><span>电话</span><a href="tel:+8617857399362">178-5739-9362</a></div>
       <div><span>GitHub</span><a href="https://github.com/YMaTaZ" target="_blank" rel="noopener">github.com/YMaTaZ</a></div>
-      <div><span>全册 PDF</span><a href="../assets/portfolio-2026.pdf" target="_blank" rel="noopener">作品集 2026（16 页）</a></div>
+      <div><span>全册 PDF</span><a href="../assets/portfolio-2026.pdf" target="_blank" rel="noopener">作品集 2026（34 页）</a></div>
     </div>
   </div>
 

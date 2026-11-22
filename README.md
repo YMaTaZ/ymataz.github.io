@@ -18,7 +18,7 @@
 | `work/digest.html` | AI 开源日报 · 端到端自动化 | 个人项目 · MIT 开源 |
 | `work/chair.html` | 人宠共处公共座椅 · 形态概念 | 课程项目 · 小组 |
 
-另有 16 页 A4 横版全册 PDF：`assets/portfolio-2026.pdf`（中文）与 `assets/portfolio-2026-en.pdf`（英文，同版式同页序）。两版简历也在 `assets/`。
+另有 34 页 A4 横版全册 PDF：`assets/portfolio-2026.pdf`（中文）与 `assets/portfolio-2026-en.pdf`（英文，同版式同页序）。两版简历也在 `assets/`。
 
 ## 双语
 
